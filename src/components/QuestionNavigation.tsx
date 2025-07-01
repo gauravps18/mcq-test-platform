@@ -5,6 +5,7 @@ interface QuestionNavigationProps {
   currentQuestionIndex: number;
   totalQuestions: number;
   userAnswers: UserAnswer[];
+  questionIds: number[];
   onNavigate: (index: number) => void;
 }
 
@@ -12,6 +13,7 @@ const QuestionNavigation: React.FC<QuestionNavigationProps> = ({
   currentQuestionIndex,
   totalQuestions,
   userAnswers,
+  questionIds,
   onNavigate,
 }) => {
   return (
@@ -19,7 +21,7 @@ const QuestionNavigation: React.FC<QuestionNavigationProps> = ({
       <h5 className="mb-3">Question Navigation</h5>
       <div className="d-flex flex-wrap gap-2">
         {Array.from({ length: totalQuestions }, (_, i) => i).map((index) => {
-          const questionId = index + 1;
+          const questionId = questionIds[index];
           const answer = userAnswers.find((a) => a.questionId === questionId);
           const isAnswered = answer && answer.selectedOptionId !== null;
           const isActive = currentQuestionIndex === index;
@@ -32,7 +34,7 @@ const QuestionNavigation: React.FC<QuestionNavigationProps> = ({
               }`}
               onClick={() => onNavigate(index)}
             >
-              {questionId}
+              {index + 1}
             </button>
           );
         })}

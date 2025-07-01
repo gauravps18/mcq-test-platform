@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useTest } from '../context/TestContext';
 import Question from '../components/Question';
@@ -76,6 +76,7 @@ const TestPage: React.FC = () => {
   const sectionAnswers = userAnswers[currentSection.id] || [];
   const currentAnswer = sectionAnswers.find((a) => a.questionId === currentQuestion.id);
   const selectedOptionId = currentAnswer ? currentAnswer.selectedOptionId : null;
+  const questionIds = currentSection.questions.map((q) => q.id);
 
   const handleSelectOption = (questionId: number, optionId: string) => {
     saveAnswer(currentSection.id, questionId, optionId);
@@ -183,6 +184,7 @@ const TestPage: React.FC = () => {
                 currentQuestionIndex={currentQuestionIndex}
                 totalQuestions={currentSection.questions.length}
                 userAnswers={sectionAnswers}
+                questionIds={questionIds}
                 onNavigate={handleNavigateQuestion}
               />
 
