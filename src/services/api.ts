@@ -44,45 +44,6 @@ export const fetchTestById = async (id: string): Promise<Test | null> => {
   }
 };
 
-// New enhanced API functions with metadata
-export const fetchTestsWithMetadata = async (): Promise<TestWithMetadata[]> => {
-  try {
-    return await dataLoader.fetchAllTests();
-  } catch (error) {
-    console.error('Error fetching tests with metadata:', error);
-    return [];
-  }
-};
-
-export const fetchTestByIdWithMetadata = async (id: string): Promise<TestWithMetadata | null> => {
-  try {
-    return await dataLoader.fetchTestById(id);
-  } catch (error) {
-    console.error(`Error fetching test with ID ${id}:`, error);
-    return null;
-  }
-};
-
-export const fetchTestsByCategory = async (category: string): Promise<TestWithMetadata[]> => {
-  try {
-    return await dataLoader.fetchTestsByCategory(category);
-  } catch (error) {
-    console.error(`Error fetching tests by category ${category}:`, error);
-    return [];
-  }
-};
-
-export const fetchTestsByDifficulty = async (
-  difficulty: 'beginner' | 'intermediate' | 'advanced'
-): Promise<TestWithMetadata[]> => {
-  try {
-    return await dataLoader.fetchTestsByDifficulty(difficulty);
-  } catch (error) {
-    console.error(`Error fetching tests by difficulty ${difficulty}:`, error);
-    return [];
-  }
-};
-
 // New API function to fetch test groups with hierarchical structure
 export const fetchTestGroups = async (): Promise<TestGroup[]> => {
   try {
@@ -100,14 +61,14 @@ export const fetchTestGroups = async (): Promise<TestGroup[]> => {
         difficulty: 'intermediate',
         sections: [
           {
-            id: `test${i}-section-A`,
+            id: `test${i}-c-cat-section-A`,
             title: 'Section A',
             description: 'English, Logical Reasoning, and Quantitative Aptitude',
             file: `tests/test${i}/c-cat-section-A.json`,
             estimatedDuration: 60,
           },
           {
-            id: `test${i}-section-B`,
+            id: `test${i}-c-cat-section-B`,
             title: 'Section B',
             description: 'Computer Fundamentals, Programming, and Data Structures',
             file: `tests/test${i}/c-cat-section-B.json`,

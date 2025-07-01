@@ -1,6 +1,6 @@
 {
-  "id": "c-cat-section-B",
-  "title": "C-CAT Exam - Section B",
+  "id": "test3-c-cat-section-B",
+  "title": "C-CAT Exam Test 3 - Section B",
   "passingPercentage": 50,
   "correctMarks": 3,
   "incorrectMarks": 1,

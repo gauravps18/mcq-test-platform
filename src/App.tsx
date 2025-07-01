@@ -20,7 +20,6 @@ function App() {
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/test/:testId" element={<TestPage />} />
-              <Route path="/test/:testGroupId/:sectionId" element={<TestPage />} />
               <Route path="/result/:testId" element={<ResultPage />} />
             </Routes>
           </div>

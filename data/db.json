@@ -1,31 +1,111 @@
 {
   "tests": [
     {
-      "id": "c-cat-section-A",
-      "title": "C-CAT Exam - Section A",
+      "id": "test1-c-cat-section-A",
+      "title": "C-CAT Exam Test 1 - Section A",
       "description": "Computer Science Aptitude Test - Section A covering English, Logical Reasoning, and Quantitative Aptitude",
       "file": "tests/test1/c-cat-section-A.json",
       "category": "entrance-exam",
       "difficulty": "intermediate",
-      "estimatedDuration": 120,
+      "estimatedDuration": 60,
       "isActive": true
     },
     {
-      "id": "c-cat-section-B",
-      "title": "C-CAT Exam - Section B",
+      "id": "test1-c-cat-section-B",
+      "title": "C-CAT Exam Test 1 - Section B",
       "description": "Computer Science Aptitude Test - Section B covering Computer Fundamentals, Programming, and Data Structures",
       "file": "tests/test1/c-cat-section-B.json",
       "category": "entrance-exam",
       "difficulty": "intermediate",
-      "estimatedDuration": 120,
+      "estimatedDuration": 60,
+      "isActive": true
+    },
+    {
+      "id": "test2-c-cat-section-A",
+      "title": "C-CAT Exam Test 2 - Section A",
+      "description": "Computer Science Aptitude Test - Section A covering English, Logical Reasoning, and Quantitative Aptitude",
+      "file": "tests/test2/c-cat-section-A.json",
+      "category": "entrance-exam",
+      "difficulty": "intermediate",
+      "estimatedDuration": 60,
+      "isActive": true
+    },
+    {
+      "id": "test2-c-cat-section-B",
+      "title": "C-CAT Exam Test 2 - Section B",
+      "description": "Computer Science Aptitude Test - Section B covering Computer Fundamentals, Programming, and Data Structures",
+      "file": "tests/test2/c-cat-section-B.json",
+      "category": "entrance-exam",
+      "difficulty": "intermediate",
+      "estimatedDuration": 60,
+      "isActive": true
+    },
+    {
+      "id": "test3-c-cat-section-A",
+      "title": "C-CAT Exam Test 3 - Section A",
+      "description": "Computer Science Aptitude Test - Section A covering English, Logical Reasoning, and Quantitative Aptitude",
+      "file": "tests/test3/c-cat-section-A.json",
+      "category": "entrance-exam",
+      "difficulty": "intermediate",
+      "estimatedDuration": 60,
+      "isActive": true
+    },
+    {
+      "id": "test3-c-cat-section-B",
+      "title": "C-CAT Exam Test 3 - Section B",
+      "description": "Computer Science Aptitude Test - Section B covering Computer Fundamentals, Programming, and Data Structures",
+      "file": "tests/test3/c-cat-section-B.json",
+      "category": "entrance-exam",
+      "difficulty": "intermediate",
+      "estimatedDuration": 60,
+      "isActive": true
+    },
+    {
+      "id": "test4-c-cat-section-A",
+      "title": "C-CAT Exam Test 4 - Section A",
+      "description": "Computer Science Aptitude Test - Section A covering English, Logical Reasoning, and Quantitative Aptitude",
+      "file": "tests/test4/c-cat-section-A.json",
+      "category": "entrance-exam",
+      "difficulty": "intermediate",
+      "estimatedDuration": 60,
+      "isActive": true
+    },
+    {
+      "id": "test4-c-cat-section-B",
+      "title": "C-CAT Exam Test 4 - Section B",
+      "description": "Computer Science Aptitude Test - Section B covering Computer Fundamentals, Programming, and Data Structures",
+      "file": "tests/test4/c-cat-section-B.json",
+      "category": "entrance-exam",
+      "difficulty": "intermediate",
+      "estimatedDuration": 60,
+      "isActive": true
+    },
+    {
+      "id": "test5-c-cat-section-A",
+      "title": "C-CAT Exam Test 5 - Section A",
+      "description": "Computer Science Aptitude Test - Section A covering English, Logical Reasoning, and Quantitative Aptitude",
+      "file": "tests/test5/c-cat-section-A.json",
+      "category": "entrance-exam",
+      "difficulty": "intermediate",
+      "estimatedDuration": 60,
+      "isActive": true
+    },
+    {
+      "id": "test5-c-cat-section-B",
+      "title": "C-CAT Exam Test 5 - Section B",
+      "description": "Computer Science Aptitude Test - Section B covering Computer Fundamentals, Programming, and Data Structures",
+      "file": "tests/test5/c-cat-section-B.json",
+      "category": "entrance-exam",
+      "difficulty": "intermediate",
+      "estimatedDuration": 60,
       "isActive": true
     }
   ],
   "metadata": {
     "version": "2.0.0",
-    "lastUpdated": "2024-01-01T00:00:00Z",
-    "totalTests": 3,
-    "categories": ["entrance-exam", "mathematics"],
-    "difficulties": ["beginner", "intermediate", "advanced"]
+    "lastUpdated": "2025-07-01T00:00:00Z",
+    "totalTests": 10,
+    "categories": ["entrance-exam"],
+    "difficulties": ["intermediate"]
   }
 }

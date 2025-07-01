@@ -6,10 +6,8 @@ import QuestionNavigation from '../components/QuestionNavigation';
 import SectionTabs from '../components/SectionTabs';
 
 const TestPage: React.FC = () => {
-  const { testId, testGroupId, sectionId } = useParams<{
-    testId?: string;
-    testGroupId?: string;
-    sectionId?: string;
+  const { testId } = useParams<{
+    testId: string;
   }>();
   const navigate = useNavigate();
   const {
@@ -26,28 +24,12 @@ const TestPage: React.FC = () => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
   const [timeRemaining, setTimeRemaining] = useState<number>(60 * 60); // 60 minutes in seconds
 
-  // Helper function to get the current test identifier for navigation
-  const getCurrentTestId = useCallback(() => {
-    if (testGroupId && sectionId) {
-      // Map to the same format used for loading the test
-      const sectionLetter = sectionId.includes('section-A') ? 'A' : 'B';
-      return `c-cat-section-${sectionLetter}`;
-    }
-    return testId;
-  }, [testGroupId, sectionId, testId]);
-
   // Load the test
   useEffect(() => {
-    if (testGroupId && sectionId) {
-      // New hierarchical structure - map to existing test ID
-      const sectionLetter = sectionId.includes('section-A') ? 'A' : 'B';
-      const mappedTestId = `c-cat-section-${sectionLetter}`;
-      loadTest(mappedTestId);
-    } else if (testId) {
-      // Original structure
+    if (testId) {
       loadTest(testId);
     }
-  }, [testId, testGroupId, sectionId]);
+  }, [testId]);
 
   // Timer functionality
   useEffect(() => {
@@ -58,7 +40,7 @@ const TestPage: React.FC = () => {
         setTimeRemaining((prev) => {
           if (prev <= 1) {
             clearInterval(timer);
-            navigate(`/result/${getCurrentTestId()}`);
+            navigate(`/result/${testId}`);
             return 0;
           }
           return prev - 1;
@@ -69,7 +51,7 @@ const TestPage: React.FC = () => {
     return () => {
       if (timer) clearInterval(timer);
     };
-  }, [loading, currentTest, testId]);
+  }, [loading, currentTest]);
 
   if (loading) {
     return (
@@ -131,7 +113,7 @@ const TestPage: React.FC = () => {
   };
 
   const handleSubmitTest = () => {
-    navigate(`/result/${getCurrentTestId()}`);
+    navigate(`/result/${testId}`);
   };
 
   // Format time as MM:SS

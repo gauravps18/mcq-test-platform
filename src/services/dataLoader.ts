@@ -184,24 +184,6 @@ export class DataLoader {
   }
 
   /**
-   * Get tests by category
-   */
-  async fetchTestsByCategory(category: string): Promise<TestWithMetadata[]> {
-    const allTests = await this.fetchAllTests();
-    return allTests.filter((test) => test.category === category);
-  }
-
-  /**
-   * Get tests by difficulty
-   */
-  async fetchTestsByDifficulty(
-    difficulty: 'beginner' | 'intermediate' | 'advanced'
-  ): Promise<TestWithMetadata[]> {
-    const allTests = await this.fetchAllTests();
-    return allTests.filter((test) => test.difficulty === difficulty);
-  }
-
-  /**
    * Clear cache (useful for development)
    */
   clearCache(): void {

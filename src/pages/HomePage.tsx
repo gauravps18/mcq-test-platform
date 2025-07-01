@@ -105,7 +105,7 @@ const HomePage: React.FC = () => {
                   {selectedTestGroup.sections.map((section) => (
                     <Link
                       key={section.id}
-                      to={`/test/${selectedTestGroup.id}/${section.id}`}
+                      to={`/test/${section.id}`}
                       className="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
                     >
                       <div>

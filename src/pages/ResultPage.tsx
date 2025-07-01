@@ -13,7 +13,7 @@ const ResultPage: React.FC = () => {
     if (testId && (!currentTest || currentTest.id !== testId)) {
       loadTest(testId);
     }
-  }, [testId, currentTest, loadTest]);
+  }, [testId, currentTest]);
 
   if (loading) {
     return (
