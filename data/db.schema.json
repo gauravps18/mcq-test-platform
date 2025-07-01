@@ -1,0 +1,201 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "MCQ Test Platform Database Schema",
+  "description": "Schema for the MCQ test platform database (db.json)",
+  "type": "object",
+  "properties": {
+    "tests": {
+      "type": "array",
+      "description": "Array of test objects",
+      "items": {
+        "$ref": "#/definitions/Test"
+      }
+    }
+  },
+  "required": ["tests"],
+  "additionalProperties": false,
+  "definitions": {
+    "Test": {
+      "type": "object",
+      "description": "A complete test with multiple sections",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the test",
+          "pattern": "^[a-zA-Z0-9-_]+$",
+          "examples": ["c-cat-section-A", "javascript-basics"]
+        },
+        "title": {
+          "type": "string",
+          "description": "Display title of the test",
+          "minLength": 1,
+          "maxLength": 200,
+          "examples": ["C-CAT Exam - Section A", "JavaScript Fundamentals"]
+        },
+        "passingPercentage": {
+          "type": "number",
+          "description": "Minimum percentage required to pass the test",
+          "minimum": 0,
+          "maximum": 100,
+          "examples": [50, 60, 70]
+        },
+        "correctMarks": {
+          "type": "number",
+          "description": "Marks awarded for each correct answer",
+          "minimum": 0,
+          "examples": [1, 2, 3, 4]
+        },
+        "incorrectMarks": {
+          "type": "number",
+          "description": "Marks deducted for each incorrect answer",
+          "minimum": 0,
+          "examples": [0, 0.25, 0.5, 1]
+        },
+        "sections": {
+          "type": "array",
+          "description": "Array of test sections",
+          "items": {
+            "$ref": "#/definitions/Section"
+          },
+          "minItems": 1
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "passingPercentage",
+        "correctMarks",
+        "incorrectMarks",
+        "sections"
+      ],
+      "additionalProperties": false
+    },
+    "Section": {
+      "type": "object",
+      "description": "A section within a test containing related questions",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the section within the test",
+          "pattern": "^[a-zA-Z0-9-_]+$",
+          "examples": ["section-A-english", "javascript-basics", "data-structures"]
+        },
+        "title": {
+          "type": "string",
+          "description": "Display title of the section",
+          "minLength": 1,
+          "maxLength": 100,
+          "examples": ["English", "Quantitative Aptitude", "C Programming", "JavaScript Basics"]
+        },
+        "questions": {
+          "type": "array",
+          "description": "Array of questions in this section",
+          "items": {
+            "$ref": "#/definitions/Question"
+          },
+          "minItems": 1
+        }
+      },
+      "required": ["id", "title", "questions"],
+      "additionalProperties": false
+    },
+    "Question": {
+      "type": "object",
+      "description": "A single question with multiple choice options",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "description": "Unique identifier for the question within the section",
+          "minimum": 1,
+          "examples": [1, 2, 3, 100]
+        },
+        "text": {
+          "type": "string",
+          "description": "The question text. Can contain markdown formatting for inline code using backticks",
+          "minLength": 1,
+          "maxLength": 2000,
+          "examples": [
+            "What is the output of the following code?",
+            "Which of the following is a valid `JavaScript` variable declaration?",
+            "ZENITH"
+          ]
+        },
+        "codeSnippet": {
+          "type": "string",
+          "description": "Optional code snippet to display with the question. Will be rendered in a code block",
+          "examples": [
+            "#include <stdio.h>\\nint main() {\\n    int x = 10;\\n    printf(\\\"%d\\\", x++);\\n    return 0;\\n}",
+            "function example() {\\n    let x = 5;\\n    return x + 10;\\n}"
+          ]
+        },
+        "options": {
+          "type": "array",
+          "description": "Array of answer options for the question",
+          "items": {
+            "$ref": "#/definitions/Option"
+          },
+          "minItems": 2,
+          "maxItems": 10
+        },
+        "correctOptionId": {
+          "type": "string",
+          "description": "The ID of the correct option",
+          "pattern": "^[a-zA-Z0-9-_]+$",
+          "examples": ["a", "b", "c", "d", "option1", "correct"]
+        },
+        "type": {
+          "type": "string",
+          "description": "Category/type of the question for organizational purposes",
+          "enum": [
+            "vocabulary_synonym",
+            "vocabulary_antonym",
+            "idiom",
+            "fill_in_the_blanks",
+            "grammar",
+            "comprehension",
+            "arithmetic",
+            "algebra",
+            "geometry",
+            "data_interpretation",
+            "logical_reasoning",
+            "code_output",
+            "syntax_rules",
+            "debugging",
+            "algorithm",
+            "data_structures",
+            "general_knowledge",
+            "current_affairs",
+            "science",
+            "history",
+            "geography",
+            "other"
+          ],
+          "examples": ["vocabulary_synonym", "code_output", "arithmetic", "logical_reasoning"]
+        }
+      },
+      "required": ["id", "text", "options", "correctOptionId"],
+      "additionalProperties": false
+    },
+    "Option": {
+      "type": "object",
+      "description": "An answer option for a question",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the option within the question",
+          "pattern": "^[a-zA-Z0-9-_]+$",
+          "examples": ["a", "b", "c", "d", "option1", "choice_a"]
+        },
+        "text": {
+          "type": "string",
+          "description": "The option text. Can contain markdown formatting for inline code using backticks",
+          "minLength": 1,
+          "maxLength": 500,
+          "examples": ["Nadir", "10", "`let x = 5;`", "a sudden surprise", "Compiler error"]
+        }
+      },
+      "required": ["id", "text"],
+      "additionalProperties": false
+    }
+  }
+}
