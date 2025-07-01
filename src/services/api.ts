@@ -47,38 +47,55 @@ export const fetchTestById = async (id: string): Promise<Test | null> => {
 // New API function to fetch test groups with hierarchical structure
 export const fetchTestGroups = async (): Promise<TestGroup[]> => {
   try {
-    // For now, we'll group tests by their folder structure
-    // This assumes tests are organized as test1/, test2/, etc.
+    // Fetch the database to get test references
+    const database = await dataLoader.fetchDatabase();
+    
+    // Group tests by their test number (test1, test2, etc.)
     const testGroups: TestGroup[] = [];
+    const groupMap = new Map<string, TestGroup>();
 
-    // Create test groups based on the folder structure
-    for (let i = 1; i <= 5; i++) {
-      const testGroup: TestGroup = {
-        id: `test${i}`,
-        title: `Test ${i}`,
-        description: `Comprehensive test ${i} with multiple sections`,
-        category: 'entrance-exam',
-        difficulty: 'intermediate',
-        sections: [
-          {
-            id: `test${i}-c-cat-section-A`,
-            title: 'Section A',
-            description: 'English, Logical Reasoning, and Quantitative Aptitude',
-            file: `tests/test${i}/c-cat-section-A.json`,
-            estimatedDuration: 60,
-          },
-          {
-            id: `test${i}-c-cat-section-B`,
-            title: 'Section B',
-            description: 'Computer Fundamentals, Programming, and Data Structures',
-            file: `tests/test${i}/c-cat-section-B.json`,
-            estimatedDuration: 60,
-          },
-        ],
-        isActive: true,
-      };
-      testGroups.push(testGroup);
-    }
+    // Process each test reference from the database
+    database.tests.forEach((testRef) => {
+      // Extract test group identifier (e.g., "test1" from "test1-c-cat-section-A")
+      const groupId = testRef.id.split('-')[0]; // Gets "test1", "test2", etc.
+      
+      // Create test group if it doesn't exist
+      if (!groupMap.has(groupId)) {
+        const testNumber = groupId.replace('test', '');
+        const groupTitle = `Test ${testNumber}`;
+        const groupDescription = `Comprehensive test ${testNumber} with multiple sections`;
+        
+        groupMap.set(groupId, {
+          id: groupId,
+          title: groupTitle,
+          description: groupDescription,
+          category: testRef.category,
+          difficulty: testRef.difficulty,
+          sections: [],
+          isActive: testRef.isActive,
+        });
+      }
+
+      // Add section to the test group
+      const testGroup = groupMap.get(groupId)!;
+      const sectionTitle = testRef.id.includes('section-A') ? 'Section A' : 'Section B';
+      
+      testGroup.sections.push({
+        id: testRef.id,
+        title: sectionTitle,
+        description: testRef.description,
+        file: testRef.file,
+        estimatedDuration: testRef.estimatedDuration,
+      });
+    });
+
+    // Convert map values to array and sort by test number
+    testGroups.push(...Array.from(groupMap.values()));
+    testGroups.sort((a, b) => {
+      const aNum = parseInt(a.id.replace('test', ''));
+      const bNum = parseInt(b.id.replace('test', ''));
+      return aNum - bNum;
+    });
 
     return testGroups;
   } catch (error) {

@@ -3,7 +3,7 @@
     {
       "id": "test1-c-cat-section-A",
       "title": "C-CAT Exam Test 1 - Section A",
-      "description": "Computer Science Aptitude Test - Section A covering English, Logical Reasoning, and Quantitative Aptitude",
+      "description": "English, Quantitative Aptitude, Reasoning, Computer Fundamentals & Concepts of Programming",
       "file": "tests/test1/c-cat-section-A.json",
       "category": "entrance-exam",
       "difficulty": "intermediate",
@@ -13,7 +13,7 @@
     {
       "id": "test1-c-cat-section-B",
       "title": "C-CAT Exam Test 1 - Section B",
-      "description": "Computer Science Aptitude Test - Section B covering Computer Fundamentals, Programming, and Data Structures",
+      "description": "C Programming, Data Structures, OOP using C++, Operating Systems & Networking, Big Data & AI",
       "file": "tests/test1/c-cat-section-B.json",
       "category": "entrance-exam",
       "difficulty": "intermediate",
@@ -23,7 +23,7 @@
     {
       "id": "test2-c-cat-section-A",
       "title": "C-CAT Exam Test 2 - Section A",
-      "description": "Computer Science Aptitude Test - Section A covering English, Logical Reasoning, and Quantitative Aptitude",
+      "description": "English, Quantitative Aptitude, Reasoning, Computer Fundamentals & Concepts of Programming",
       "file": "tests/test2/c-cat-section-A.json",
       "category": "entrance-exam",
       "difficulty": "intermediate",
@@ -33,7 +33,7 @@
     {
       "id": "test2-c-cat-section-B",
       "title": "C-CAT Exam Test 2 - Section B",
-      "description": "Computer Science Aptitude Test - Section B covering Computer Fundamentals, Programming, and Data Structures",
+      "description": "C Programming, Data Structures, OOP using C++, Operating Systems & Networking, Big Data & AI",
       "file": "tests/test2/c-cat-section-B.json",
       "category": "entrance-exam",
       "difficulty": "intermediate",
@@ -43,7 +43,7 @@
     {
       "id": "test3-c-cat-section-A",
       "title": "C-CAT Exam Test 3 - Section A (Hard)",
-      "description": "Advanced Computer Science Aptitude Test - Section A covering English, Quantitative Aptitude, Reasoning, and Computer Fundamentals with hard difficulty level",
+      "description": "English, Quantitative Aptitude, Reasoning, Computer Fundamentals & Concepts of Programming",
       "file": "tests/test3/c-cat-section-A.json",
       "category": "entrance-exam",
       "difficulty": "hard",
@@ -53,7 +53,7 @@
     {
       "id": "test3-c-cat-section-B",
       "title": "C-CAT Exam Test 3 - Section B (Hard)",
-      "description": "Advanced Computer Science Aptitude Test - Section B covering C Programming, Data Structures, OOP with C++, Operating Systems, Networking, Big Data & AI with hard difficulty level",
+      "description": "C Programming, Data Structures, OOP using C++, Operating Systems & Networking, Big Data & AI",
       "file": "tests/test3/c-cat-section-B.json",
       "category": "entrance-exam",
       "difficulty": "hard",
@@ -63,7 +63,7 @@
     {
       "id": "test4-c-cat-section-A",
       "title": "C-CAT Exam Test 4 - Section A",
-      "description": "Computer Science Aptitude Test - Section A covering English, Logical Reasoning, and Quantitative Aptitude",
+      "description": "English, Quantitative Aptitude, Reasoning, Computer Fundamentals & Concepts of Programming",
       "file": "tests/test4/c-cat-section-A.json",
       "category": "entrance-exam",
       "difficulty": "intermediate",
@@ -73,7 +73,7 @@
     {
       "id": "test4-c-cat-section-B",
       "title": "C-CAT Exam Test 4 - Section B",
-      "description": "Computer Science Aptitude Test - Section B covering Computer Fundamentals, Programming, and Data Structures",
+      "description": "C Programming, Data Structures, OOP using C++, Operating Systems & Networking, Big Data & AI",
       "file": "tests/test4/c-cat-section-B.json",
       "category": "entrance-exam",
       "difficulty": "intermediate",
@@ -83,7 +83,7 @@
     {
       "id": "test5-c-cat-section-A",
       "title": "C-CAT Exam Test 5 - Section A",
-      "description": "Computer Science Aptitude Test - Section A covering English, Logical Reasoning, and Quantitative Aptitude",
+      "description": "English, Quantitative Aptitude, Reasoning, Computer Fundamentals & Concepts of Programming",
       "file": "tests/test5/c-cat-section-A.json",
       "category": "entrance-exam",
       "difficulty": "intermediate",
@@ -93,7 +93,7 @@
     {
       "id": "test5-c-cat-section-B",
       "title": "C-CAT Exam Test 5 - Section B",
-      "description": "Computer Science Aptitude Test - Section B covering Computer Fundamentals, Programming, and Data Structures",
+      "description": "C Programming, Data Structures, OOP using C++, Operating Systems & Networking, Big Data & AI",
       "file": "tests/test5/c-cat-section-B.json",
       "category": "entrance-exam",
       "difficulty": "intermediate",
