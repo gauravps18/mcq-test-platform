@@ -2,6 +2,7 @@
   "name": "mcq-test-platform",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://gauravps18.github.io/mcq-test-platform",
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
@@ -25,11 +26,13 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "node scripts/copy-data.js && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "server": "node server.js",
-    "validate": "node scripts/validate-tests.js"
+    "validate": "node scripts/validate-tests.js",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -48,5 +51,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
   }
 }

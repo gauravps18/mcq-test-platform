@@ -1,10 +1,13 @@
 import axios from 'axios';
 import { Test, Database, TestWithMetadata } from '../types';
 
-const API_URL = 'http://localhost:3001';
+// Detect environment and set appropriate base URL
+const isDevelopment = process.env.NODE_ENV === 'development';
+const API_URL = isDevelopment ? 'http://localhost:3001' : '';
 
 /**
  * Data loader service for handling modular test database structure
+ * Works in both development (with local server) and production (static files) environments
  */
 export class DataLoader {
   private cache: Map<string, Test> = new Map();
@@ -19,7 +22,8 @@ export class DataLoader {
     }
 
     try {
-      const response = await axios.get(`${API_URL}/db`);
+      const url = isDevelopment ? `${API_URL}/db` : '/data/db.json';
+      const response = await axios.get(url);
       this.databaseCache = response.data;
       return response.data;
     } catch (error) {
@@ -37,9 +41,17 @@ export class DataLoader {
     }
 
     try {
-      // Remove 'tests/' prefix if present and add it to the API URL
-      const cleanPath = filePath.replace(/^tests\//, '');
-      const response = await axios.get(`${API_URL}/testfiles/${cleanPath}`);
+      let url: string;
+      if (isDevelopment) {
+        // Remove 'tests/' prefix if present and add it to the API URL
+        const cleanPath = filePath.replace(/^tests\//, '');
+        url = `${API_URL}/testfiles/${cleanPath}`;
+      } else {
+        // For production, use static file path
+        url = `/data/${filePath}`;
+      }
+      
+      const response = await axios.get(url);
       const test = response.data;
 
       this.cache.set(filePath, test);
