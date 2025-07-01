@@ -27,9 +27,12 @@ const HomePage: React.FC = () => {
 
   if (loading) {
     return (
-      <div className="text-center my-5">
-        <div className="spinner-border" role="status">
-          <span className="visually-hidden">Loading...</span>
+      <div className="homepage-container">
+        <div className="loading-container">
+          <div className="loading-spinner">
+            <div className="spinner"></div>
+            <p className="loading-text">Loading amazing tests for you...</p>
+          </div>
         </div>
       </div>
     );
@@ -37,91 +40,157 @@ const HomePage: React.FC = () => {
 
   if (error) {
     return (
-      <div className="alert alert-danger" role="alert">
-        {error}
+      <div className="homepage-container">
+        <div className="error-container">
+          <div className="error-icon">⚠️</div>
+          <h3>Oops! Something went wrong</h3>
+          <p>{error}</p>
+          <button className="btn btn-primary" onClick={() => window.location.reload()}>
+            Try Again
+          </button>
+        </div>
       </div>
     );
   }
 
   return (
-    <div className="container py-5">
-      <h1 className="display-4 text-center mb-5">MCQ Test Platform</h1>
-
-      <div className="row">
-        <div className="col-md-8 mx-auto">
-          <div className="card shadow">
-            <div className="card-header d-flex justify-content-between align-items-center">
-              <h2 className="card-title h4 mb-0">
-                {selectedTestGroup ? `${selectedTestGroup.title} - Sections` : 'Available Tests'}
-              </h2>
-              {selectedTestGroup && (
-                <button
-                  className="btn btn-outline-secondary btn-sm"
-                  onClick={() => setSelectedTestGroup(null)}
-                >
-                  ← Back to Tests
-                </button>
-              )}
+    <div className="homepage-container">
+      {/* Hero Section */}
+      <div className="hero-section">
+        <div className="hero-content">
+          <div className="hero-badge">
+            <span className="badge-icon">🚀</span>
+            <span>Test Your Knowledge</span>
+          </div>
+          <h1 className="hero-title">MCQ Test Platform</h1>
+          <p className="hero-subtitle">
+            Challenge yourself with our comprehensive collection of multiple-choice questions. Track
+            your progress and master new concepts.
+          </p>
+          <div className="hero-stats">
+            <div className="stat-item">
+              <div className="stat-number">{testGroups.length}</div>
+              <div className="stat-label">Test Groups</div>
             </div>
-            <div className="card-body">
-              {!selectedTestGroup ? (
-                // Show test groups
+            <div className="stat-item">
+              <div className="stat-number">
+                {testGroups.reduce((total, group) => total + group.sections.length, 0)}
+              </div>
+              <div className="stat-label">Total Sections</div>
+            </div>
+            <div className="stat-item">
+              <div className="stat-number">∞</div>
+              <div className="stat-label">Learning</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Content */}
+      <div className="main-content">
+        <div className="container">
+          <div className="content-header">
+            <div className="breadcrumb-nav">
+              {selectedTestGroup && (
                 <>
-                  {testGroups.length === 0 ? (
-                    <p className="text-center">No tests available at the moment.</p>
-                  ) : (
-                    <div className="list-group">
-                      {testGroups.map((testGroup) => (
-                        <div
-                          key={testGroup.id}
-                          className="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
-                          style={{ cursor: 'pointer' }}
-                          onClick={() => setSelectedTestGroup(testGroup)}
-                        >
-                          <div>
-                            <h5 className="mb-1">{testGroup.title}</h5>
-                            <p className="mb-1 text-muted">{testGroup.description}</p>
-                            <small className="text-muted">
-                              Sections: {testGroup.sections.length} | Difficulty:{' '}
-                              <span className="text-capitalize">{testGroup.difficulty}</span> |
-                              Category: {testGroup.category}
-                            </small>
+                  <button className="breadcrumb-link" onClick={() => setSelectedTestGroup(null)}>
+                    All Tests
+                  </button>
+                  <span className="breadcrumb-separator">›</span>
+                  <span className="breadcrumb-current">{selectedTestGroup.title}</span>
+                </>
+              )}
+              {!selectedTestGroup && <span className="breadcrumb-current">All Tests</span>}
+            </div>
+            <h2 className="content-title">
+              {selectedTestGroup ? `${selectedTestGroup.title} Sections` : 'Choose Your Test'}
+            </h2>
+            <p className="content-subtitle">
+              {selectedTestGroup
+                ? 'Select a section to begin your assessment'
+                : 'Browse through our collection of tests and find the perfect challenge for you'}
+            </p>
+          </div>
+
+          {!selectedTestGroup ? (
+            // Show test groups with card grid
+            <>
+              {testGroups.length === 0 ? (
+                <div className="empty-state">
+                  <div className="empty-icon">📚</div>
+                  <h3>No tests available</h3>
+                  <p>Check back later for new tests and challenges!</p>
+                </div>
+              ) : (
+                <div className="test-grid">
+                  {testGroups.map((testGroup) => (
+                    <div
+                      key={testGroup.id}
+                      className="test-card"
+                      onClick={() => setSelectedTestGroup(testGroup)}
+                    >
+                      <div className="test-card-header">
+                        <div className="test-category">
+                          <span className={`category-badge ${testGroup.category.toLowerCase()}`}>
+                            {testGroup.category}
+                          </span>
+                        </div>
+                        <div className={`difficulty-badge ${testGroup.difficulty.toLowerCase()}`}>
+                          {testGroup.difficulty}
+                        </div>
+                      </div>
+                      <div className="test-card-body">
+                        <h3 className="test-title">{testGroup.title}</h3>
+                        <p className="test-description">{testGroup.description}</p>
+                        <div className="test-meta">
+                          <div className="meta-item">
+                            <span className="meta-icon">📋</span>
+                            <span>{testGroup.sections.length} Sections</span>
                           </div>
-                          <div className="text-end">
-                            <div className="badge bg-primary mb-2">
-                              {testGroup.sections.length} Sections
-                            </div>
-                            <br />
-                            <small className="text-muted">Click to view sections</small>
+                          <div className="meta-item">
+                            <span className="meta-icon">⏱️</span>
+                            <span>
+                              {testGroup.sections.reduce(
+                                (total, section) => total + (section.estimatedDuration || 0),
+                                0
+                              )}{' '}
+                              min total
+                            </span>
                           </div>
                         </div>
-                      ))}
-                    </div>
-                  )}
-                </>
-              ) : (
-                // Show sections within selected test group
-                <div className="list-group">
-                  {selectedTestGroup.sections.map((section) => (
-                    <Link
-                      key={section.id}
-                      to={`/test/${section.id}`}
-                      className="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
-                    >
-                      <div>
-                        <h5 className="mb-1">{section.title}</h5>
-                        <p className="mb-1 text-muted">{section.description}</p>
-                        <small className="text-muted">
-                          Duration: {section.estimatedDuration} minutes
-                        </small>
                       </div>
-                      <button className="btn btn-primary btn-sm">Start Section</button>
-                    </Link>
+                      <div className="test-card-footer">
+                        <button className="start-test-btn">
+                          <span>Explore Sections</span>
+                          <span className="btn-arrow">→</span>
+                        </button>
+                      </div>
+                    </div>
                   ))}
                 </div>
               )}
+            </>
+          ) : (
+            // Show sections within selected test group
+            <div className="sections-grid">
+              {selectedTestGroup.sections.map((section, index) => (
+                <Link key={section.id} to={`/test/${section.id}`} className="section-card">
+                  <div className="section-number">{index + 1}</div>
+                  <div className="section-content">
+                    <h4 className="section-title">{section.title}</h4>
+                    <p className="section-description">{section.description}</p>
+                    <div className="section-duration">
+                      <span className="duration-icon">⏰</span>
+                      <span>{section.estimatedDuration} minutes</span>
+                    </div>
+                  </div>
+                  <div className="section-action">
+                    <button className="section-start-btn">Start Section</button>
+                  </div>
+                </Link>
+              ))}
             </div>
-          </div>
+          )}
         </div>
       </div>
     </div>
