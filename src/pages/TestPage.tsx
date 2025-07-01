@@ -47,7 +47,7 @@ const TestPage: React.FC = () => {
       // Original structure
       loadTest(testId);
     }
-  }, [testId, testGroupId, sectionId, loadTest]);
+  }, [testId, testGroupId, sectionId]);
 
   // Timer functionality
   useEffect(() => {
@@ -69,7 +69,7 @@ const TestPage: React.FC = () => {
     return () => {
       if (timer) clearInterval(timer);
     };
-  }, [loading, currentTest, testId, getCurrentTestId, navigate]);
+  }, [loading, currentTest, testId]);
 
   if (loading) {
     return (

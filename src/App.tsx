@@ -13,7 +13,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
-    <Router>
+    <Router basename={process.env.REACT_APP_BASENAME || '/'}>
       <TestProvider>
         <div className="App">
           <div className="app-container">

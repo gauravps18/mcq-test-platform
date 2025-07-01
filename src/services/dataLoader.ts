@@ -3,7 +3,15 @@ import { Test, Database, TestWithMetadata } from '../types';
 
 // Detect environment and set appropriate base URL
 const isDevelopment = process.env.NODE_ENV === 'development';
-const API_URL = isDevelopment ? 'http://localhost:3001' : '';
+const API_URL =
+  process.env.REACT_APP_API_BASE_URL || (isDevelopment ? 'http://localhost:3001' : '');
+const BASE_PATH = process.env.REACT_APP_BASENAME || '/';
+
+// Helper function to get the correct static file path
+const getStaticPath = (path: string) => {
+  const cleanBasePath = BASE_PATH === '/' ? '' : BASE_PATH;
+  return `${cleanBasePath}${path}`;
+};
 
 /**
  * Data loader service for handling modular test database structure
@@ -22,7 +30,7 @@ export class DataLoader {
     }
 
     try {
-      const url = isDevelopment ? `${API_URL}/db` : '/data/db.json';
+      const url = isDevelopment ? `${API_URL}/db` : getStaticPath('/data/db.json');
       const response = await axios.get(url);
       this.databaseCache = response.data;
       return response.data;
@@ -48,7 +56,7 @@ export class DataLoader {
         url = `${API_URL}/testfiles/${cleanPath}`;
       } else {
         // For production, use static file path
-        url = `/data/${filePath}`;
+        url = getStaticPath(`/data/${filePath}`);
       }
 
       const response = await axios.get(url);
