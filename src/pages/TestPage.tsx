@@ -158,73 +158,165 @@ const TestPage: React.FC = () => {
   };
 
   return (
-    <div className="container py-4">
-      <div className="row mb-4">
-        <div className="col">
-          <h1>{currentTest.title}</h1>
-        </div>
-        <div className="col-auto">
-          <div className="d-flex align-items-center">
-            <span className="me-2">Time Remaining:</span>
-            <div className="badge bg-primary fs-5">{formatTime(timeRemaining)}</div>
+    <div className="test-page-container">
+      {/* Header Section */}
+      <div className="test-header">
+        <div className="container">
+          <div className="test-header-content">
+            <div className="test-info">
+              <div className="test-badge">
+                <span className="badge-icon">📝</span>
+                <span>Active Test</span>
+              </div>
+              <h1 className="test-title">{currentTest.title}</h1>
+              <div className="test-meta">
+                <div className="meta-item">
+                  <span className="meta-icon">📋</span>
+                  <span>
+                    Section {currentSectionIndex + 1} of {currentTest.sections.length}
+                  </span>
+                </div>
+                <div className="meta-item">
+                  <span className="meta-icon">❓</span>
+                  <span>
+                    Question {currentQuestionIndex + 1} of {currentSection.questions.length}
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div className="timer-container">
+              <div className="timer-label">Time Remaining</div>
+              <div className={`timer-display ${timeRemaining < 300 ? 'timer-warning' : ''}`}>
+                {formatTime(timeRemaining)}
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
-      <SectionTabs
-        sections={currentTest.sections}
-        currentSectionIndex={currentSectionIndex}
-        onSectionChange={handleNavigateSection}
-      />
-
-      <div className="row">
-        <div className="col-md-8">
-          <Question
-            question={currentQuestion}
-            selectedOptionId={selectedOptionId}
-            onSelectOption={handleSelectOption}
-          />
-
-          <div className="d-flex justify-content-between mb-4">
-            <button
-              className="btn btn-secondary"
-              onClick={handlePreviousQuestion}
-              disabled={currentQuestionIndex === 0 && currentSectionIndex === 0}
-            >
-              Previous
-            </button>
-
-            {currentQuestionIndex === currentSection.questions.length - 1 &&
-            currentSectionIndex === currentTest.sections.length - 1 ? (
-              <button className="btn btn-success" onClick={handleSubmitTest}>
-                Submit Test
-              </button>
-            ) : (
-              <button className="btn btn-primary" onClick={handleNextQuestion}>
-                Next
-              </button>
-            )}
-          </div>
-        </div>
-
-        <div className="col-md-4">
-          <div className="card">
-            <div className="card-header">
-              <h5 className="card-title mb-0">{currentSection.title}</h5>
+      {/* Main Content */}
+      <div className="test-main-content">
+        <div className="container">
+          <div className="test-layout">
+            {/* Left Sidebar - Section Navigation */}
+            <div className="test-sidebar-left">
+              <SectionTabs
+                sections={currentTest.sections}
+                currentSectionIndex={currentSectionIndex}
+                onSectionChange={handleNavigateSection}
+              />
             </div>
-            <div className="card-body">
-              <QuestionNavigation
-                currentQuestionIndex={currentQuestionIndex}
-                totalQuestions={currentSection.questions.length}
-                userAnswers={sectionAnswers}
-                questionIds={questionIds}
-                onNavigate={handleNavigateQuestion}
+
+            {/* Main Question Area */}
+            <div className="test-content">
+              <Question
+                question={currentQuestion}
+                selectedOptionId={selectedOptionId}
+                onSelectOption={handleSelectOption}
               />
 
-              <div className="d-grid gap-2">
-                <button className="btn btn-success" onClick={handleSubmitTest}>
-                  Submit Test
+              <div className="question-controls">
+                <button
+                  className="btn btn-secondary btn-nav"
+                  onClick={handlePreviousQuestion}
+                  disabled={currentQuestionIndex === 0 && currentSectionIndex === 0}
+                >
+                  <span className="btn-icon">←</span>
+                  Previous
                 </button>
+
+                <div className="progress-info">
+                  <div className="progress-bar-container">
+                    <div
+                      className="progress-bar"
+                      style={{
+                        width: `${(() => {
+                          let totalQuestions = 0;
+                          let completedQuestions = 0;
+
+                          for (let i = 0; i < currentTest.sections.length; i++) {
+                            totalQuestions += currentTest.sections[i].questions.length;
+                            if (i < currentSectionIndex) {
+                              completedQuestions += currentTest.sections[i].questions.length;
+                            } else if (i === currentSectionIndex) {
+                              completedQuestions += currentQuestionIndex + 1;
+                            }
+                          }
+
+                          return (completedQuestions / totalQuestions) * 100;
+                        })()}%`,
+                      }}
+                    ></div>
+                  </div>
+                  <span className="progress-text">
+                    {(() => {
+                      let totalQuestions = 0;
+                      let completedQuestions = 0;
+
+                      for (let i = 0; i < currentTest.sections.length; i++) {
+                        totalQuestions += currentTest.sections[i].questions.length;
+                        if (i < currentSectionIndex) {
+                          completedQuestions += currentTest.sections[i].questions.length;
+                        } else if (i === currentSectionIndex) {
+                          completedQuestions += currentQuestionIndex + 1;
+                        }
+                      }
+
+                      return `${completedQuestions} of ${totalQuestions}`;
+                    })()}
+                  </span>
+                </div>
+
+                {currentQuestionIndex === currentSection.questions.length - 1 &&
+                currentSectionIndex === currentTest.sections.length - 1 ? (
+                  <button className="btn btn-success btn-nav" onClick={handleSubmitTest}>
+                    <span className="btn-icon">✓</span>
+                    Submit Test
+                  </button>
+                ) : (
+                  <button className="btn btn-primary btn-nav" onClick={handleNextQuestion}>
+                    Next
+                    <span className="btn-icon">→</span>
+                  </button>
+                )}
+              </div>
+            </div>
+
+            {/* Right Sidebar - Question Navigation */}
+            <div className="test-sidebar-right">
+              <div className="question-nav-card">
+                <QuestionNavigation
+                  currentQuestionIndex={currentQuestionIndex}
+                  totalQuestions={currentSection.questions.length}
+                  userAnswers={sectionAnswers}
+                  questionIds={questionIds}
+                  onNavigate={handleNavigateQuestion}
+                />
+              </div>
+
+              <div className="sidebar-section">
+                <div className="section-info-card">
+                  <div className="section-header">
+                    <h5 className="section-title">{currentSection.title}</h5>
+                    <div className="section-progress">
+                      {
+                        sectionAnswers.filter(
+                          (answer) =>
+                            answer.selectedOptionId !== null &&
+                            answer.selectedOptionId !== undefined
+                        ).length
+                      }{' '}
+                      of {currentSection.questions.length} answered
+                    </div>
+                  </div>
+
+                  <div className="sidebar-actions">
+                    <button className="btn btn-success btn-submit" onClick={handleSubmitTest}>
+                      <span className="btn-icon">✓</span>
+                      Submit Test
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

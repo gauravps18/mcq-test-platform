@@ -36,47 +36,61 @@ const formatTextWithBackticks = (text: string) => {
 
 const Question: React.FC<QuestionProps> = ({ question, selectedOptionId, onSelectOption }) => {
   return (
-    <div className="card mb-4">
-      <div className="card-header">
-        <h4 className="card-title">Question {question.id}</h4>
+    <div className="question-container">
+      <div className="question-header">
+        <div className="question-badge">
+          <span className="question-icon">❓</span>
+          <span>Question {question.id}</span>
+        </div>
       </div>
-      <div className="card-body">
-        <p className="question-text mb-4">{formatTextWithBackticks(question.text)}</p>
+
+      <div className="question-content">
+        <div className="question-text">{formatTextWithBackticks(question.text)}</div>
 
         {question.codeSnippet && (
-          <div className="code-snippet-container mb-4">
-            <pre
-              className="p-3 border rounded"
-              style={{
-                backgroundColor: '#0d1117',
-                color: '#f0f6fc',
-                border: '1px solid #30363d',
-              }}
-            >
+          <div className="code-snippet-container">
+            <div className="code-header">
+              <span className="code-icon">💻</span>
+              <span>Code</span>
+            </div>
+            <pre className="code-snippet">
               <code>{question.codeSnippet}</code>
             </pre>
           </div>
         )}
 
         <div className="options-container">
-          {question.options.map((option) => (
-            <div className="form-check mb-2" key={option.id}>
-              <input
-                className="form-check-input"
-                type="radio"
-                id={`question-${question.id}-option-${option.id}`}
-                name={`question-${question.id}`}
-                checked={selectedOptionId === option.id}
-                onChange={() => onSelectOption(question.id, option.id)}
-              />
-              <label
-                className="form-check-label"
-                htmlFor={`question-${question.id}-option-${option.id}`}
+          <div className="options-header">
+            <span className="options-title">Choose your answer:</span>
+          </div>
+
+          <div className="options-list">
+            {question.options.map((option, index) => (
+              <div
+                className={`option-item ${selectedOptionId === option.id ? 'selected' : ''}`}
+                key={option.id}
+                onClick={() => onSelectOption(question.id, option.id)}
               >
-                {formatTextWithBackticks(option.text)}
-              </label>
-            </div>
-          ))}
+                <div className="option-radio">
+                  <input
+                    className="form-check-input"
+                    type="radio"
+                    id={`question-${question.id}-option-${option.id}`}
+                    name={`question-${question.id}`}
+                    checked={selectedOptionId === option.id}
+                    onChange={() => onSelectOption(question.id, option.id)}
+                  />
+                  <span className="option-letter">{String.fromCharCode(65 + index)}</span>
+                </div>
+                <label
+                  className="option-label"
+                  htmlFor={`question-${question.id}-option-${option.id}`}
+                >
+                  {formatTextWithBackticks(option.text)}
+                </label>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
