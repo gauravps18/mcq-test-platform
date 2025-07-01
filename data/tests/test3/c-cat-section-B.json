@@ -1,335 +1,137 @@
 {
   "id": "test3-c-cat-section-B",
-  "title": "C-CAT Exam Test 3 - Section B",
-  "passingPercentage": 50,
+  "title": "C-CAT Exam Test 3 - Section B (Hard)",
+  "passingPercentage": 60,
   "correctMarks": 3,
   "incorrectMarks": 1,
   "sections": [
-    {
-      "id": "section-B-computer-fundamentals",
-      "title": "Computer Fundamentals",
-      "questions": [
-        {
-          "id": 1,
-          "text": "Which of the following is considered the 'brain' of the computer?",
-          "options": [
-            { "id": "a", "text": "RAM" },
-            { "id": "b", "text": "ROM" },
-            { "id": "c", "text": "CPU" },
-            { "id": "d", "text": "Hard Disk" }
-          ],
-          "correctOptionId": "c",
-          "type": "basic_concepts"
-        },
-        {
-          "id": 2,
-          "text": "What is the purpose of an operating system?",
-          "options": [
-            { "id": "a", "text": "To manage hardware and software resources" },
-            { "id": "b", "text": "To process data" },
-            { "id": "c", "text": "To connect to the internet" },
-            { "id": "d", "text": "To create documents" }
-          ],
-          "correctOptionId": "a",
-          "type": "operating_systems"
-        },
-        {
-          "id": 3,
-          "text": "Which of the following is a volatile memory?",
-          "options": [
-            { "id": "a", "text": "ROM" },
-            { "id": "b", "text": "PROM" },
-            { "id": "c", "text": "EPROM" },
-            { "id": "d", "text": "RAM" }
-          ],
-          "correctOptionId": "d",
-          "type": "memory"
-        },
-        {
-          "id": 4,
-          "text": "The binary equivalent of decimal number 13 is:",
-          "options": [
-            { "id": "a", "text": "1101" },
-            { "id": "b", "text": "1011" },
-            { "id": "c", "text": "1110" },
-            { "id": "d", "text": "1001" }
-          ],
-          "correctOptionId": "a",
-          "type": "number_systems"
-        },
-        {
-          "id": 5,
-          "text": "What does the acronym \"HTTP\" stand for?",
-          "options": [
-            { "id": "a", "text": "HyperText Transfer Protocol" },
-            { "id": "b", "text": "Hyper Transfer Text Protocol" },
-            { "id": "c", "text": "High Technology Transfer Protocol" },
-            { "id": "d", "text": "Home Text Transfer Protocol" }
-          ],
-          "correctOptionId": "a",
-          "type": "networking"
-        },
-        {
-          "id": 6,
-          "text": "Which of the following is an input device?",
-          "options": [
-            { "id": "a", "text": "Printer" },
-            { "id": "b", "text": "Monitor" },
-            { "id": "c", "text": "Keyboard" },
-            { "id": "d", "text": "Speaker" }
-          ],
-          "correctOptionId": "c",
-          "type": "hardware"
-        },
-        {
-          "id": 7,
-          "text": "What is a firewall in a computer network?",
-          "options": [
-            { "id": "a", "text": "A program that scans for viruses" },
-            { "id": "b", "text": "A hardware or software-based network security system" },
-            { "id": "c", "text": "A device that amplifies network signals" },
-            { "id": "d", "text": "A tool for managing network cables" }
-          ],
-          "correctOptionId": "b",
-          "type": "networking_security"
-        },
-        {
-          "id": 8,
-          "text": "Which generation of computers used Integrated Circuits (ICs)?",
-          "options": [
-            { "id": "a", "text": "First Generation" },
-            { "id": "b", "text": "Second Generation" },
-            { "id": "c", "text": "Third Generation" },
-            { "id": "d", "text": "Fourth Generation" }
-          ],
-          "correctOptionId": "c",
-          "type": "computer_generations"
-        },
-        {
-          "id": 9,
-          "text": "What is the full form of LAN?",
-          "options": [
-            { "id": "a", "text": "Local Area Network" },
-            { "id": "b", "text": "Long Area Network" },
-            { "id": "c", "text": "Limited Area Network" },
-            { "id": "d", "text": "Large Area Network" }
-          ],
-          "correctOptionId": "a",
-          "type": "networking"
-        },
-        {
-          "id": 10,
-          "text": "Which type of software is Microsoft Word?",
-          "options": [
-            { "id": "a", "text": "System Software" },
-            { "id": "b", "text": "Application Software" },
-            { "id": "c", "text": "Utility Software" },
-            { "id": "d", "text": "Operating System" }
-          ],
-          "correctOptionId": "b",
-          "type": "software_types"
-        }
-      ]
-    },
     {
       "id": "section-B-c-programming",
       "title": "C Programming",
       "questions": [
         {
-          "id": 11,
-          "text": "What is the output of the following C code snippet?",
-          "codeSnippet": "#include <stdio.h>\nint main() {\n    int x = 10;\n    printf(\"%d\", x++);\n    return 0;\n}",
+          "id": 1,
+          "text": "What will be the output of the following C code?",
+          "codeSnippet": "#include <stdio.h>\nint main() {\n    int a = 5, b = 2;\n    printf(\"%d\", a+++b);\n    return 0;\n}",
           "options": [
-            { "id": "a", "text": "10" },
-            { "id": "b", "text": "11" },
-            { "id": "c", "text": "9" },
-            { "id": "d", "text": "Compiler error" }
+            { "id": "a", "text": "7" },
+            { "id": "b", "text": "8" },
+            { "id": "c", "text": "Compilation error" },
+            { "id": "d", "text": "Undefined behavior" }
           ],
           "correctOptionId": "a",
-          "type": "code_output"
+          "type": "syntax_semantics"
         },
         {
-          "id": 12,
-          "text": "Which of the following is NOT a valid C variable name?",
+          "id": 2,
+          "text": "In C, which of the following statements about function pointers is FALSE?",
           "options": [
-            { "id": "a", "text": "`_myVar`" },
-            { "id": "b", "text": "`my_var`" },
-            { "id": "c", "text": "`1myVar`" },
-            { "id": "d", "text": "`myVar1`" }
+            { "id": "a", "text": "Function pointers can be stored in arrays" },
+            { "id": "b", "text": "Function pointers can be passed as arguments to functions" },
+            { "id": "c", "text": "Function pointers can be dereferenced using the * operator" },
+            { "id": "d", "text": "Function pointers cannot be compared for equality" }
           ],
-          "correctOptionId": "c",
-          "type": "syntax_rules"
+          "correctOptionId": "d",
+          "type": "advanced_concepts"
         },
         {
-          "id": 13,
-          "text": "What will be the output of the following C program?",
-          "codeSnippet": "#include <stdio.h>\n\nvoid swap(int a, int b) {\n    int temp = a;\n    a = b;\n    b = temp;\n}\n\nint main() {\n    int x = 5, y = 10;\n    swap(x, y);\n    printf(\"%d %d\\n\", x, y);\n    return 0;\n}",
+          "id": 3,
+          "text": "What is the purpose of the 'volatile' keyword in C?",
           "options": [
-            { "id": "a", "text": "10 5" },
-            { "id": "b", "text": "5 10" },
-            { "id": "c", "text": "5 5" },
-            { "id": "d", "text": "10 10" }
-          ],
-          "correctOptionId": "b",
-          "type": "code_output"
-        },
-        {
-          "id": 14,
-          "text": "What is the correct way to declare a pointer to an integer in C?",
-          "options": [
-            { "id": "a", "text": "`int* ptr;`" },
-            { "id": "b", "text": "`*int ptr;`" },
-            { "id": "c", "text": "`int ptr*;`" },
-            { "id": "d", "text": "`ptr int;`" }
-          ],
-          "correctOptionId": "a",
-          "type": "pointers"
-        },
-        {
-          "id": 15,
-          "text": "What does `malloc()` return on success?",
-          "options": [
-            { "id": "a", "text": "`void` pointer" },
-            { "id": "b", "text": "`int` pointer" },
-            { "id": "c", "text": "`NULL`" },
-            { "id": "d", "text": "`char` pointer" }
+            { "id": "a", "text": "To prevent compiler optimization on a variable" },
+            { "id": "b", "text": "To make a variable constant" },
+            { "id": "c", "text": "To allocate memory dynamically" },
+            { "id": "d", "text": "To define a variable with automatic storage" }
           ],
           "correctOptionId": "a",
           "type": "memory_management"
         },
         {
-          "id": 16,
-          "text": "What is the output of the following C code snippet?",
-          "codeSnippet": "#include <stdio.h>\nint main() {\n    int arr[] = {10, 20, 30, 40, 50};\n    printf(\"%d\", *(arr + 2));\n    return 0;\n}",
+          "id": 4,
+          "text": "Which of the following is the correct way to declare a pointer to a function that takes two integers and returns an integer?",
           "options": [
-            { "id": "a", "text": "10" },
-            { "id": "b", "text": "20" },
-            { "id": "c", "text": "30" },
-            { "id": "d", "text": "40" }
-          ],
-          "correctOptionId": "c",
-          "type": "code_output"
-        },
-        {
-          "id": 17,
-          "text": "Which of the following is a logical operator in C?",
-          "options": [
-            { "id": "a", "text": "`+`" },
-            { "id": "b", "text": "`&&`" },
-            { "id": "c", "text": "`=`" },
-            { "id": "d", "text": "`==`" }
+            { "id": "a", "text": "int *func(int, int);" },
+            { "id": "b", "text": "int (*func)(int, int);" },
+            { "id": "c", "text": "int func*(int, int);" },
+            { "id": "d", "text": "*int func(int, int);" }
           ],
           "correctOptionId": "b",
-          "type": "operators"
+          "type": "pointers_functions"
         },
         {
-          "id": 18,
-          "text": "What is the purpose of the `break` statement in C?",
+          "id": 5,
+          "text": "What will be the size of the following structure on a 64-bit system with typical alignment?",
+          "codeSnippet": "struct test {\n    char a;\n    int b;\n    char c;\n    double d;\n};",
           "options": [
-            { "id": "a", "text": "To exit a loop or switch statement" },
-            { "id": "b", "text": "To skip the current iteration of a loop" },
-            { "id": "c", "text": "To terminate the program" },
-            { "id": "d", "text": "To define a new function" }
+            { "id": "a", "text": "14 bytes" },
+            { "id": "b", "text": "16 bytes" },
+            { "id": "c", "text": "24 bytes" },
+            { "id": "d", "text": "32 bytes" }
           ],
-          "correctOptionId": "a",
-          "type": "control_flow"
+          "correctOptionId": "c",
+          "type": "memory_alignment"
         },
         {
-          "id": 19,
-          "text": "What is the size of `char` data type in C?",
+          "id": 6,
+          "text": "What is the output of the following C code?",
+          "codeSnippet": "#include <stdio.h>\nint main() {\n    int x = 10;\n    int *p = &x;\n    printf(\"%d\", ++*p);\n    printf(\"%d\", x);\n    return 0;\n}",
           "options": [
-            { "id": "a", "text": "1 byte" },
-            { "id": "b", "text": "2 bytes" },
-            { "id": "c", "text": "4 bytes" },
-            { "id": "d", "text": "8 bytes" }
+            { "id": "a", "text": "1010" },
+            { "id": "b", "text": "1011" },
+            { "id": "c", "text": "1111" },
+            { "id": "d", "text": "1110" }
           ],
-          "correctOptionId": "a",
-          "type": "data_types"
+          "correctOptionId": "c",
+          "type": "pointers"
         },
         {
-          "id": 20,
-          "text": "Which of the following storage classes has a default initial value of zero?",
+          "id": 7,
+          "text": "Which of the following is true about malloc() and calloc()?",
           "options": [
-            { "id": "a", "text": "`auto`" },
-            { "id": "b", "text": "`register`" },
-            { "id": "c", "text": "`static`" },
-            { "id": "d", "text": "`extern`" }
+            { "id": "a", "text": "malloc() initializes memory to zero, calloc() doesn't" },
+            { "id": "b", "text": "calloc() initializes memory to zero, malloc() doesn't" },
+            { "id": "c", "text": "Both initialize memory to zero" },
+            { "id": "d", "text": "Neither initializes memory to zero" }
+          ],
+          "correctOptionId": "b",
+          "type": "dynamic_memory"
+        },
+        {
+          "id": 8,
+          "text": "What is the difference between 'const char *p' and 'char * const p'?",
+          "options": [
+            { "id": "a", "text": "First makes pointer constant, second makes data constant" },
+            { "id": "b", "text": "First makes data constant, second makes pointer constant" },
+            { "id": "c", "text": "Both make pointer constant" },
+            { "id": "d", "text": "Both make data constant" }
+          ],
+          "correctOptionId": "b",
+          "type": "const_pointers"
+        },
+        {
+          "id": 9,
+          "text": "What will be the output of the following code?",
+          "codeSnippet": "#include <stdio.h>\nint main() {\n    char str[] = \"Hello\";\n    char *p = str;\n    printf(\"%c\", *(p+2));\n    return 0;\n}",
+          "options": [
+            { "id": "a", "text": "H" },
+            { "id": "b", "text": "e" },
+            { "id": "c", "text": "l" },
+            { "id": "d", "text": "o" }
+          ],
+          "correctOptionId": "c",
+          "type": "string_pointers"
+        },
+        {
+          "id": 10,
+          "text": "Which storage class has the longest lifetime in C?",
+          "options": [
+            { "id": "a", "text": "auto" },
+            { "id": "b", "text": "register" },
+            { "id": "c", "text": "static" },
+            { "id": "d", "text": "extern" }
           ],
           "correctOptionId": "c",
           "type": "storage_classes"
-        },
-        {
-          "id": 21,
-          "text": "What is recursion in C programming?",
-          "options": [
-            { "id": "a", "text": "A function calling itself" },
-            { "id": "b", "text": "A loop that never ends" },
-            { "id": "c", "text": "A type of data structure" },
-            { "id": "d", "text": "A way to handle errors" }
-          ],
-          "correctOptionId": "a",
-          "type": "functions"
-        },
-        {
-          "id": 22,
-          "text": "What is the output of the following C code?",
-          "codeSnippet": "#include <stdio.h>\nint main() {\n    int i = 0;\n    for (i=0; i<3; i++) {\n        printf(\"C-DAC \");\n    }\n    return 0;\n}",
-          "options": [
-            { "id": "a", "text": "C-DAC" },
-            { "id": "b", "text": "C-DAC C-DAC" },
-            { "id": "c", "text": "C-DAC C-DAC C-DAC" },
-            { "id": "d", "text": "Error" }
-          ],
-          "correctOptionId": "c",
-          "type": "code_output"
-        },
-        {
-          "id": 23,
-          "text": "Which header file is necessary for using `printf()` and `scanf()` functions?",
-          "options": [
-            { "id": "a", "text": "`stdlib.h`" },
-            { "id": "b", "text": "`string.h`" },
-            { "id": "c", "text": "`math.h`" },
-            { "id": "d", "text": "`stdio.h`" }
-          ],
-          "correctOptionId": "d",
-          "type": "header_files"
-        },
-        {
-          "id": 24,
-          "text": "What is the result of `5 / 2` in C (integer division)?",
-          "options": [
-            { "id": "a", "text": "2.5" },
-            { "id": "b", "text": "2" },
-            { "id": "c", "text": "3" },
-            { "id": "d", "text": "Compiler error" }
-          ],
-          "correctOptionId": "b",
-          "type": "operators"
-        },
-        {
-          "id": 25,
-          "text": "What is the maximum value an `unsigned char` can hold?",
-          "options": [
-            { "id": "a", "text": "127" },
-            { "id": "b", "text": "255" },
-            { "id": "c", "text": "32767" },
-            { "id": "d", "text": "65535" }
-          ],
-          "correctOptionId": "b",
-          "type": "data_types"
-        },
-        {
-          "id": 26,
-          "text": "What is the purpose of the `typedef` keyword in C?",
-          "options": [
-            { "id": "a", "text": "To define a new function" },
-            { "id": "b", "text": "To create a new data type alias" },
-            { "id": "c", "text": "To include a header file" },
-            { "id": "d", "text": "To declare a global variable" }
-          ],
-          "correctOptionId": "b",
-          "type": "keywords"
         }
       ]
     },
@@ -338,328 +140,513 @@
       "title": "Data Structures",
       "questions": [
         {
-          "id": 27,
-          "text": "Which of the following data structures is LIFO (Last In, First Out)?",
+          "id": 11,
+          "text": "In a B-tree of order m, what is the maximum number of keys that can be stored in a node?",
+          "options": [
+            { "id": "a", "text": "m" },
+            { "id": "b", "text": "m-1" },
+            { "id": "c", "text": "m+1" },
+            { "id": "d", "text": "2m-1" }
+          ],
+          "correctOptionId": "b",
+          "type": "tree_structures"
+        },
+        {
+          "id": 12,
+          "text": "Which data structure is most suitable for implementing undo functionality in a text editor?",
           "options": [
             { "id": "a", "text": "Queue" },
             { "id": "b", "text": "Stack" },
-            { "id": "c", "text": "Linked List" },
-            { "id": "d", "text": "Tree" }
+            { "id": "c", "text": "Binary Tree" },
+            { "id": "d", "text": "Hash Table" }
           ],
           "correctOptionId": "b",
-          "type": "basic_concepts"
+          "type": "application_design"
+        },
+        {
+          "id": 13,
+          "text": "What is the worst-case time complexity for searching in a skip list?",
+          "options": [
+            { "id": "a", "text": "O(1)" },
+            { "id": "b", "text": "O(log n)" },
+            { "id": "c", "text": "O(n)" },
+            { "id": "d", "text": "O(n log n)" }
+          ],
+          "correctOptionId": "c",
+          "type": "complexity_analysis"
+        },
+        {
+          "id": 14,
+          "text": "In a Red-Black tree, what is the maximum possible height for a tree with n nodes?",
+          "options": [
+            { "id": "a", "text": "log n" },
+            { "id": "b", "text": "2 log n" },
+            { "id": "c", "text": "2 log(n+1)" },
+            { "id": "d", "text": "n" }
+          ],
+          "correctOptionId": "c",
+          "type": "balanced_trees"
+        },
+        {
+          "id": 15,
+          "text": "Which of the following operations on a Fibonacci heap has the best amortized time complexity?",
+          "options": [
+            { "id": "a", "text": "Insert" },
+            { "id": "b", "text": "Find-min" },
+            { "id": "c", "text": "Delete-min" },
+            { "id": "d", "text": "Decrease-key" }
+          ],
+          "correctOptionId": "b",
+          "type": "heap_structures"
+        },
+        {
+          "id": 16,
+          "text": "What is the space complexity of DFS (Depth First Search) algorithm?",
+          "options": [
+            { "id": "a", "text": "O(1)" },
+            { "id": "b", "text": "O(V)" },
+            { "id": "c", "text": "O(E)" },
+            { "id": "d", "text": "O(V + E)" }
+          ],
+          "correctOptionId": "b",
+          "type": "graph_algorithms"
+        },
+        {
+          "id": 17,
+          "text": "In which scenario would you prefer a linked list over an array?",
+          "options": [
+            { "id": "a", "text": "When you need random access to elements" },
+            { "id": "b", "text": "When you need cache-friendly memory access" },
+            { "id": "c", "text": "When you frequently insert/delete at arbitrary positions" },
+            { "id": "d", "text": "When memory usage needs to be minimized" }
+          ],
+          "correctOptionId": "c",
+          "type": "data_structure_selection"
+        },
+        {
+          "id": 18,
+          "text": "What is the minimum number of comparisons required to find both maximum and minimum elements in an array of n elements?",
+          "options": [
+            { "id": "a", "text": "n" },
+            { "id": "b", "text": "2n-2" },
+            { "id": "c", "text": "3n/2-2" },
+            { "id": "d", "text": "2n" }
+          ],
+          "correctOptionId": "c",
+          "type": "algorithm_optimization"
+        },
+        {
+          "id": 19,
+          "text": "Which data structure is best for implementing a LRU (Least Recently Used) cache?",
+          "options": [
+            { "id": "a", "text": "Array" },
+            { "id": "b", "text": "Doubly Linked List + Hash Map" },
+            { "id": "c", "text": "Binary Tree" },
+            { "id": "d", "text": "Stack" }
+          ],
+          "correctOptionId": "b",
+          "type": "cache_implementation"
+        },
+        {
+          "id": 20,
+          "text": "What is the time complexity of building a heap from an unsorted array using the bottom-up approach?",
+          "options": [
+            { "id": "a", "text": "O(n log n)" },
+            { "id": "b", "text": "O(n²)" },
+            { "id": "c", "text": "O(n)" },
+            { "id": "d", "text": "O(log n)" }
+          ],
+          "correctOptionId": "c",
+          "type": "heap_construction"
+        }
+      ]
+    },
+    {
+      "id": "section-B-oop-cpp",
+      "title": "Object Oriented Programming using C++",
+      "questions": [
+        {
+          "id": 21,
+          "text": "What is the output of the following C++ code?",
+          "codeSnippet": "#include <iostream>\nusing namespace std;\nclass Base {\npublic:\n    virtual void func() { cout << \"Base\"; }\n};\nclass Derived : public Base {\npublic:\n    void func() override { cout << \"Derived\"; }\n};\nint main() {\n    Base* ptr = new Derived();\n    ptr->func();\n    return 0;\n}",
+          "options": [
+            { "id": "a", "text": "Base" },
+            { "id": "b", "text": "Derived" },
+            { "id": "c", "text": "Compilation error" },
+            { "id": "d", "text": "Runtime error" }
+          ],
+          "correctOptionId": "b",
+          "type": "virtual_functions"
+        },
+        {
+          "id": 22,
+          "text": "Which of the following statements about abstract classes in C++ is TRUE?",
+          "options": [
+            { "id": "a", "text": "A class with at least one pure virtual function is abstract" },
+            { "id": "b", "text": "Abstract classes cannot have constructors" },
+            { "id": "c", "text": "Abstract classes cannot have data members" },
+            { "id": "d", "text": "Abstract classes cannot be inherited" }
+          ],
+          "correctOptionId": "a",
+          "type": "abstract_classes"
+        },
+        {
+          "id": 23,
+          "text": "What is the difference between function overloading and function overriding?",
+          "options": [
+            { "id": "a", "text": "Overloading is compile-time, overriding is runtime" },
+            { "id": "b", "text": "Overloading is runtime, overriding is compile-time" },
+            { "id": "c", "text": "Both are compile-time" },
+            { "id": "d", "text": "Both are runtime" }
+          ],
+          "correctOptionId": "a",
+          "type": "polymorphism"
+        },
+        {
+          "id": 24,
+          "text": "In C++, what happens when you declare a destructor as virtual?",
+          "options": [
+            { "id": "a", "text": "It prevents inheritance" },
+            { "id": "b", "text": "It ensures proper cleanup in inheritance hierarchies" },
+            { "id": "c", "text": "It makes the class abstract" },
+            { "id": "d", "text": "It prevents object creation" }
+          ],
+          "correctOptionId": "b",
+          "type": "virtual_destructors"
+        },
+        {
+          "id": 25,
+          "text": "Which of the following best describes the RAII principle in C++?",
+          "options": [
+            { "id": "a", "text": "Resource Allocation Is Inheritance" },
+            { "id": "b", "text": "Resource Acquisition Is Initialization" },
+            { "id": "c", "text": "Runtime Analysis and Interpretation Idiom" },
+            { "id": "d", "text": "Recursive Allocation of Instance Information" }
+          ],
+          "correctOptionId": "b",
+          "type": "design_principles"
+        },
+        {
+          "id": 26,
+          "text": "What is the purpose of the 'explicit' keyword in C++?",
+          "options": [
+            { "id": "a", "text": "To prevent implicit type conversions" },
+            { "id": "b", "text": "To make functions inline" },
+            { "id": "c", "text": "To declare virtual functions" },
+            { "id": "d", "text": "To enable template specialization" }
+          ],
+          "correctOptionId": "a",
+          "type": "cpp_keywords"
+        },
+        {
+          "id": 27,
+          "text": "Which of the following is true about copy constructors in C++?",
+          "options": [
+            { "id": "a", "text": "They are always provided by the compiler" },
+            { "id": "b", "text": "They perform shallow copy by default" },
+            { "id": "c", "text": "They can be declared as virtual" },
+            { "id": "d", "text": "They must always be explicitly defined" }
+          ],
+          "correctOptionId": "b",
+          "type": "copy_constructors"
         },
         {
           "id": 28,
-          "text": "The process of inserting an element into a stack is called:",
+          "text": "What is the output of the following C++ code?",
+          "codeSnippet": "#include <iostream>\nusing namespace std;\nclass A {\npublic:\n    A() { cout << \"A\"; }\n    ~A() { cout << \"~A\"; }\n};\nint main() {\n    A a;\n    return 0;\n}",
           "options": [
-            { "id": "a", "text": "Pop" },
-            { "id": "b", "text": "Push" },
-            { "id": "c", "text": "Enqueue" },
-            { "id": "d", "text": "Dequeue" }
+            { "id": "a", "text": "A" },
+            { "id": "b", "text": "~A" },
+            { "id": "c", "text": "A~A" },
+            { "id": "d", "text": "~AA" }
           ],
-          "correctOptionId": "b",
-          "type": "stack_operations"
+          "correctOptionId": "c",
+          "type": "constructor_destructor"
         },
         {
           "id": 29,
-          "text": "In a circular linked list, how do you find the last node?",
+          "text": "Which of the following access specifiers allows access from derived classes but not from outside the class?",
           "options": [
-            { "id": "a", "text": "The `next` pointer of the last node points to `NULL`." },
-            { "id": "b", "text": "The `next` pointer of the last node points to the first node." },
-            { "id": "c", "text": "The `prev` pointer of the last node points to the first node." },
-            { "id": "d", "text": "It has a special `end` pointer." }
+            { "id": "a", "text": "public" },
+            { "id": "b", "text": "private" },
+            { "id": "c", "text": "protected" },
+            { "id": "d", "text": "friend" }
           ],
-          "correctOptionId": "b",
-          "type": "linked_lists"
+          "correctOptionId": "c",
+          "type": "access_specifiers"
         },
         {
           "id": 30,
-          "text": "Which data structure is used to implement BFS (Breadth-First Search) algorithm?",
+          "text": "What is the difference between 'new' and 'malloc' in C++?",
           "options": [
-            { "id": "a", "text": "Stack" },
-            { "id": "b", "text": "Queue" },
-            { "id": "c", "text": "Array" },
-            { "id": "d", "text": "Linked List" }
-          ],
-          "correctOptionId": "b",
-          "type": "graph_traversal"
-        },
-        {
-          "id": 31,
-          "text": "What is the time complexity of searching an element in a sorted array using Binary Search?",
-          "options": [
-            { "id": "a", "text": "$O(n)$" },
-            { "id": "b", "text": "$O(log n)$" },
-            { "id": "c", "text": "$O(n^2)$" },
-            { "id": "d", "text": "$O(1)$" }
-          ],
-          "correctOptionId": "b",
-          "type": "algorithms_complexity"
-        },
-        {
-          "id": 32,
-          "text": "Which of the following is a non-linear data structure?",
-          "options": [
-            { "id": "a", "text": "Array" },
-            { "id": "b", "text": "Linked List" },
-            { "id": "c", "text": "Tree" },
-            { "id": "d", "text": "Queue" }
-          ],
-          "correctOptionId": "c",
-          "type": "data_structure_types"
-        },
-        {
-          "id": 33,
-          "text": "A full binary tree with 'n' leaves has how many internal nodes?",
-          "options": [
-            { "id": "a", "text": "$n-1$" },
-            { "id": "b", "text": "$n$" },
-            { "id": "c", "text": "$2n-1$" },
-            { "id": "d", "text": "$2n$" }
+            { "id": "a", "text": "new calls constructors, malloc doesn't" },
+            { "id": "b", "text": "malloc calls constructors, new doesn't" },
+            { "id": "c", "text": "Both call constructors" },
+            { "id": "d", "text": "Neither calls constructors" }
           ],
           "correctOptionId": "a",
-          "type": "trees"
-        },
-        {
-          "id": 34,
-          "text": "What is a \"dequeue\" operation in a queue?",
-          "options": [
-            { "id": "a", "text": "Adding an element to the front" },
-            { "id": "b", "text": "Removing an element from the front" },
-            { "id": "c", "text": "Adding an element to the rear" },
-            { "id": "d", "text": "Removing an element from the rear" }
-          ],
-          "correctOptionId": "b",
-          "type": "queue_operations"
-        },
-        {
-          "id": 35,
-          "text": "Which sorting algorithm has the worst-case time complexity of $O(n^2)$?",
-          "options": [
-            { "id": "a", "text": "Merge Sort" },
-            { "id": "b", "text": "Quick Sort" },
-            { "id": "c", "text": "Bubble Sort" },
-            { "id": "d", "text": "Heap Sort" }
-          ],
-          "correctOptionId": "c",
-          "type": "sorting_algorithms"
-        },
-        {
-          "id": 36,
-          "text": "The term \"hashing\" is used to:",
-          "options": [
-            { "id": "a", "text": "Encrypt data" },
-            { "id": "b", "text": "Store and retrieve data quickly" },
-            { "id": "c", "text": "Sort data" },
-            { "id": "d", "text": "Compress data" }
-          ],
-          "correctOptionId": "b",
-          "type": "hashing"
+          "type": "memory_allocation"
         }
       ]
     },
     {
-      "id": "section-B-oop-concepts",
-      "title": "Object-Oriented Programming (OOP) Concepts",
-      "questions": [
-        {
-          "id": 37,
-          "text": "Which of the following is NOT an OOP concept?",
-          "options": [
-            { "id": "a", "text": "Encapsulation" },
-            { "id": "b", "text": "Inheritance" },
-            { "id": "c", "text": "Polymorphism" },
-            { "id": "d", "text": "Iteration" }
-          ],
-          "correctOptionId": "d",
-          "type": "oop_fundamentals"
-        },
-        {
-          "id": 38,
-          "text": "The ability of an object to take on many forms is known as:",
-          "options": [
-            { "id": "a", "text": "Encapsulation" },
-            { "id": "b", "text": "Abstraction" },
-            { "id": "c", "text": "Inheritance" },
-            { "id": "d", "text": "Polymorphism" }
-          ],
-          "correctOptionId": "d",
-          "type": "polymorphism"
-        },
-        {
-          "id": 39,
-          "text": "Which of the following best describes encapsulation?",
-          "options": [
-            { "id": "a", "text": "Hiding the implementation details from the user." },
-            { "id": "b", "text": "Creating new classes from existing classes." },
-            { "id": "c", "text": "Allowing objects to take on different forms." },
-            { "id": "d", "text": "Combining data and functions into a single unit." }
-          ],
-          "correctOptionId": "d",
-          "type": "encapsulation"
-        },
-        {
-          "id": 40,
-          "text": "A class is a:",
-          "options": [
-            { "id": "a", "text": "Blueprint for creating objects" },
-            { "id": "b", "text": "Function" },
-            { "id": "c", "text": "Variable" },
-            { "id": "d", "text": "Data structure" }
-          ],
-          "correctOptionId": "a",
-          "type": "classes_objects"
-        },
-        {
-          "id": 41,
-          "text": "What is a constructor in OOP?",
-          "options": [
-            { "id": "a", "text": "A function that destroys an object" },
-            { "id": "b", "text": "A special member function used to initialize objects" },
-            { "id": "c", "text": "A regular member function" },
-            { "id": "d", "text": "A function that modifies an object's state" }
-          ],
-          "correctOptionId": "b",
-          "type": "constructors"
-        },
-        {
-          "id": 42,
-          "text": "Which keyword is used to achieve inheritance in C++?",
-          "options": [
-            { "id": "a", "text": "`implements`" },
-            { "id": "b", "text": "`inherits`" },
-            { "id": "c", "text": "`extends`" },
-            { "id": "d", "text": "`public`, `protected`, `private` (in class definition)" }
-          ],
-          "correctOptionId": "d",
-          "type": "inheritance"
-        },
-        {
-          "id": 43,
-          "text": "What is method overloading?",
-          "options": [
-            {
-              "id": "a",
-              "text": "Defining multiple methods with the same name but different parameters in the same class."
-            },
-            {
-              "id": "b",
-              "text": "Defining a method in a subclass with the same name and signature as a method in its superclass."
-            },
-            { "id": "c", "text": "Inheriting methods from multiple classes." },
-            { "id": "d", "text": "Using a single method to perform multiple tasks." }
-          ],
-          "correctOptionId": "a",
-          "type": "polymorphism"
-        },
-        {
-          "id": 44,
-          "text": "`this` pointer in C++ points to:",
-          "options": [
-            { "id": "a", "text": "The class itself" },
-            { "id": "b", "text": "The base class" },
-            { "id": "c", "text": "The current object" },
-            { "id": "d", "text": "The derived class" }
-          ],
-          "correctOptionId": "c",
-          "type": "pointers"
-        },
-        {
-          "id": 45,
-          "text": "Which concept allows a class to have properties and behaviors that are shared from another class?",
-          "options": [
-            { "id": "a", "text": "Encapsulation" },
-            { "id": "b", "text": "Abstraction" },
-            { "id": "c", "text": "Inheritance" },
-            { "id": "d", "text": "Polymorphism" }
-          ],
-          "correctOptionId": "c",
-          "type": "inheritance"
-        }
-      ]
-    },
-    {
-      "id": "section-B-operating-systems-networking",
+      "id": "section-B-operating-systems",
       "title": "Operating Systems & Networking",
       "questions": [
         {
-          "id": 46,
-          "text": "Which of the following is NOT a type of operating system?",
+          "id": 31,
+          "text": "In the context of deadlock prevention, which of the following techniques involves ensuring that processes request resources in a specific order?",
           "options": [
-            { "id": "a", "text": "Real-time operating system" },
-            { "id": "b", "text": "Multi-user operating system" },
-            { "id": "c", "text": "Single-tasking operating system" },
-            { "id": "d", "text": "Database management system" }
-          ],
-          "correctOptionId": "d",
-          "type": "operating_systems"
-        },
-        {
-          "id": 47,
-          "text": "What is a deadlock in an operating system?",
-          "options": [
-            { "id": "a", "text": "When a process never terminates" },
-            {
-              "id": "b",
-              "text": "When two or more processes are blocked indefinitely, waiting for each other"
-            },
-            { "id": "c", "text": "When a system runs out of memory" },
-            { "id": "d", "text": "When a process tries to access an invalid memory location" }
-          ],
-          "correctOptionId": "b",
-          "type": "operating_systems_concepts"
-        },
-        {
-          "id": 48,
-          "text": "Which layer of the OSI model is responsible for logical addressing and routing?",
-          "options": [
-            { "id": "a", "text": "Physical Layer" },
-            { "id": "b", "text": "Data Link Layer" },
-            { "id": "c", "text": "Network Layer" },
-            { "id": "d", "text": "Transport Layer" }
+            { "id": "a", "text": "Wait-Die scheme" },
+            { "id": "b", "text": "Wound-Wait scheme" },
+            { "id": "c", "text": "Resource ordering" },
+            { "id": "d", "text": "Banker's algorithm" }
           ],
           "correctOptionId": "c",
-          "type": "networking_osi_model"
+          "type": "deadlock_prevention"
         },
         {
-          "id": 49,
-          "text": "What is the primary purpose of paging in an operating system?",
+          "id": 32,
+          "text": "Which page replacement algorithm suffers from Belady's anomaly?",
           "options": [
-            { "id": "a", "text": "To prevent deadlocks" },
-            {
-              "id": "b",
-              "text": "To manage virtual memory and allow non-contiguous memory allocation"
-            },
-            { "id": "c", "text": "To schedule processes efficiently" },
-            { "id": "d", "text": "To handle I/O operations" }
+            { "id": "a", "text": "LRU (Least Recently Used)" },
+            { "id": "b", "text": "FIFO (First In First Out)" },
+            { "id": "c", "text": "Optimal" },
+            { "id": "d", "text": "LFU (Least Frequently Used)" }
           ],
           "correctOptionId": "b",
-          "type": "operating_systems_memory_management"
+          "type": "memory_management"
         },
         {
-          "id": 50,
-          "text": "Which of the following is a connection-oriented protocol?",
+          "id": 33,
+          "text": "In TCP, what is the purpose of the sliding window protocol?",
           "options": [
-            { "id": "a", "text": "UDP" },
-            { "id": "b", "text": "ICMP" },
-            { "id": "c", "text": "TCP" },
-            { "id": "d", "text": "ARP" }
+            { "id": "a", "text": "Error detection" },
+            { "id": "b", "text": "Flow control and reliability" },
+            { "id": "c", "text": "Routing optimization" },
+            { "id": "d", "text": "Congestion avoidance only" }
           ],
-          "correctOptionId": "c",
+          "correctOptionId": "b",
           "type": "networking_protocols"
         },
         {
-          "id": 51,
-          "text": "What is throughput in the context of operating systems?",
+          "id": 34,
+          "text": "Which scheduling algorithm can lead to starvation of long processes?",
           "options": [
-            { "id": "a", "text": "The number of processes completed per unit time" },
-            { "id": "b", "text": "The time taken for a process to complete" },
-            { "id": "c", "text": "The amount of CPU time allocated to a process" },
-            { "id": "d", "text": "The number of I/O operations performed" }
+            { "id": "a", "text": "Round Robin" },
+            { "id": "b", "text": "First Come First Served" },
+            { "id": "c", "text": "Shortest Job First" },
+            { "id": "d", "text": "Priority scheduling with aging" }
+          ],
+          "correctOptionId": "c",
+          "type": "process_scheduling"
+        },
+        {
+          "id": 35,
+          "text": "In the OSI model, which layer is responsible for end-to-end communication and error recovery?",
+          "options": [
+            { "id": "a", "text": "Network Layer" },
+            { "id": "b", "text": "Transport Layer" },
+            { "id": "c", "text": "Session Layer" },
+            { "id": "d", "text": "Data Link Layer" }
+          ],
+          "correctOptionId": "b",
+          "type": "network_architecture"
+        },
+        {
+          "id": 36,
+          "text": "What is the main advantage of using semaphores over mutex locks?",
+          "options": [
+            { "id": "a", "text": "Semaphores are faster" },
+            { "id": "b", "text": "Semaphores can count resources" },
+            { "id": "c", "text": "Semaphores prevent deadlocks" },
+            { "id": "d", "text": "Semaphores use less memory" }
+          ],
+          "correctOptionId": "b",
+          "type": "synchronization"
+        },
+        {
+          "id": 37,
+          "text": "In virtual memory systems, what is thrashing?",
+          "options": [
+            { "id": "a", "text": "Excessive page swapping" },
+            { "id": "b", "text": "Memory fragmentation" },
+            { "id": "c", "text": "Cache misses" },
+            { "id": "d", "text": "Process starvation" }
           ],
           "correctOptionId": "a",
-          "type": "operating_systems_performance"
+          "type": "virtual_memory"
+        },
+        {
+          "id": 38,
+          "text": "Which network topology provides the highest fault tolerance?",
+          "options": [
+            { "id": "a", "text": "Bus" },
+            { "id": "b", "text": "Star" },
+            { "id": "c", "text": "Ring" },
+            { "id": "d", "text": "Mesh" }
+          ],
+          "correctOptionId": "d",
+          "type": "network_topology"
+        },
+        {
+          "id": 39,
+          "text": "What is the purpose of the Translation Lookaside Buffer (TLB)?",
+          "options": [
+            { "id": "a", "text": "To cache disk blocks" },
+            { "id": "b", "text": "To cache page table entries" },
+            { "id": "c", "text": "To cache CPU instructions" },
+            { "id": "d", "text": "To cache network packets" }
+          ],
+          "correctOptionId": "b",
+          "type": "memory_management"
+        },
+        {
+          "id": 40,
+          "text": "In the context of distributed systems, what is the CAP theorem about?",
+          "options": [
+            { "id": "a", "text": "Consistency, Availability, and Partition tolerance" },
+            { "id": "b", "text": "Concurrency, Atomicity, and Persistence" },
+            { "id": "c", "text": "Capacity, Availability, and Performance" },
+            { "id": "d", "text": "Caching, Authentication, and Privacy" }
+          ],
+          "correctOptionId": "a",
+          "type": "distributed_systems"
+        }
+      ]
+    },
+    {
+      "id": "section-B-big-data-ai",
+      "title": "Big Data & Artificial Intelligence",
+      "questions": [
+        {
+          "id": 41,
+          "text": "In the context of Big Data, what does the 'Variety' characteristic primarily refer to?",
+          "options": [
+            { "id": "a", "text": "The speed at which data is generated" },
+            { "id": "b", "text": "The amount of data being processed" },
+            { "id": "c", "text": "Different types and formats of data" },
+            { "id": "d", "text": "The accuracy and quality of data" }
+          ],
+          "correctOptionId": "c",
+          "type": "big_data_concepts"
+        },
+        {
+          "id": 42,
+          "text": "Which of the following is NOT a characteristic of the MapReduce programming model?",
+          "options": [
+            { "id": "a", "text": "Fault tolerance" },
+            { "id": "b", "text": "Parallel processing" },
+            { "id": "c", "text": "Real-time processing" },
+            { "id": "d", "text": "Scalability" }
+          ],
+          "correctOptionId": "c",
+          "type": "mapreduce_hadoop"
+        },
+        {
+          "id": 43,
+          "text": "In machine learning, what is the primary purpose of cross-validation?",
+          "options": [
+            { "id": "a", "text": "To increase the size of the training dataset" },
+            { "id": "b", "text": "To assess model performance and prevent overfitting" },
+            { "id": "c", "text": "To reduce the dimensionality of data" },
+            { "id": "d", "text": "To clean and preprocess the data" }
+          ],
+          "correctOptionId": "b",
+          "type": "machine_learning"
+        },
+        {
+          "id": 44,
+          "text": "Which of the following algorithms is commonly used for clustering in unsupervised learning?",
+          "options": [
+            { "id": "a", "text": "Linear Regression" },
+            { "id": "b", "text": "Decision Trees" },
+            { "id": "c", "text": "K-means" },
+            { "id": "d", "text": "Support Vector Machines" }
+          ],
+          "correctOptionId": "c",
+          "type": "unsupervised_learning"
+        },
+        {
+          "id": 45,
+          "text": "In the context of neural networks, what is the vanishing gradient problem?",
+          "options": [
+            { "id": "a", "text": "When gradients become too large during backpropagation" },
+            { "id": "b", "text": "When gradients become very small in deep networks" },
+            { "id": "c", "text": "When the network fails to converge" },
+            { "id": "d", "text": "When the learning rate is too high" }
+          ],
+          "correctOptionId": "b",
+          "type": "deep_learning"
+        },
+        {
+          "id": 46,
+          "text": "What is the main advantage of Apache Spark over Hadoop MapReduce?",
+          "options": [
+            { "id": "a", "text": "Better fault tolerance" },
+            { "id": "b", "text": "In-memory processing capabilities" },
+            { "id": "c", "text": "Lower storage requirements" },
+            { "id": "d", "text": "Simpler programming model" }
+          ],
+          "correctOptionId": "b",
+          "type": "big_data_frameworks"
+        },
+        {
+          "id": 47,
+          "text": "In supervised learning, what is the difference between classification and regression?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Classification predicts continuous values, regression predicts discrete values"
+            },
+            {
+              "id": "b",
+              "text": "Classification predicts discrete values, regression predicts continuous values"
+            },
+            { "id": "c", "text": "Both predict continuous values" },
+            { "id": "d", "text": "Both predict discrete values" }
+          ],
+          "correctOptionId": "b",
+          "type": "ml_fundamentals"
+        },
+        {
+          "id": 48,
+          "text": "What is the purpose of feature scaling in machine learning?",
+          "options": [
+            { "id": "a", "text": "To increase the number of features" },
+            {
+              "id": "b",
+              "text": "To ensure all features contribute equally to distance calculations"
+            },
+            { "id": "c", "text": "To remove irrelevant features" },
+            { "id": "d", "text": "To create new features from existing ones" }
+          ],
+          "correctOptionId": "b",
+          "type": "feature_engineering"
+        },
+        {
+          "id": 49,
+          "text": "In the context of Hadoop ecosystem, what is the primary function of HDFS?",
+          "options": [
+            { "id": "a", "text": "Data processing" },
+            { "id": "b", "text": "Distributed storage" },
+            { "id": "c", "text": "Resource management" },
+            { "id": "d", "text": "Data visualization" }
+          ],
+          "correctOptionId": "b",
+          "type": "hadoop_ecosystem"
+        },
+        {
+          "id": 50,
+          "text": "Which activation function is most commonly used in hidden layers of deep neural networks?",
+          "options": [
+            { "id": "a", "text": "Sigmoid" },
+            { "id": "b", "text": "Tanh" },
+            { "id": "c", "text": "ReLU" },
+            { "id": "d", "text": "Linear" }
+          ],
+          "correctOptionId": "c",
+          "type": "neural_networks"
         }
       ]
     }

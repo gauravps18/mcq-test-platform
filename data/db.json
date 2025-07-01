@@ -42,21 +42,21 @@
     },
     {
       "id": "test3-c-cat-section-A",
-      "title": "C-CAT Exam Test 3 - Section A",
-      "description": "Computer Science Aptitude Test - Section A covering English, Logical Reasoning, and Quantitative Aptitude",
+      "title": "C-CAT Exam Test 3 - Section A (Hard)",
+      "description": "Advanced Computer Science Aptitude Test - Section A covering English, Quantitative Aptitude, Reasoning, and Computer Fundamentals with hard difficulty level",
       "file": "tests/test3/c-cat-section-A.json",
       "category": "entrance-exam",
-      "difficulty": "intermediate",
+      "difficulty": "hard",
       "estimatedDuration": 60,
       "isActive": true
     },
     {
       "id": "test3-c-cat-section-B",
-      "title": "C-CAT Exam Test 3 - Section B",
-      "description": "Computer Science Aptitude Test - Section B covering Computer Fundamentals, Programming, and Data Structures",
+      "title": "C-CAT Exam Test 3 - Section B (Hard)",
+      "description": "Advanced Computer Science Aptitude Test - Section B covering C Programming, Data Structures, OOP with C++, Operating Systems, Networking, Big Data & AI with hard difficulty level",
       "file": "tests/test3/c-cat-section-B.json",
       "category": "entrance-exam",
-      "difficulty": "intermediate",
+      "difficulty": "hard",
       "estimatedDuration": 60,
       "isActive": true
     },

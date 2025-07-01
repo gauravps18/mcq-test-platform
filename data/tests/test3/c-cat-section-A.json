@@ -1,7 +1,7 @@
 {
   "id": "test3-c-cat-section-A",
-  "title": "C-CAT Exam Test 3 - Section A",
-  "passingPercentage": 50,
+  "title": "C-CAT Exam Test 3 - Section A (Hard)",
+  "passingPercentage": 60,
   "correctMarks": 3,
   "incorrectMarks": 1,
   "sections": [
@@ -11,429 +11,318 @@
       "questions": [
         {
           "id": 1,
-          "text": "ZENITH",
+          "text": "Choose the most appropriate word to complete the sentence: The committee's decision was _____ and lacked any substantial evidence.",
           "options": [
-            { "id": "a", "text": "Nadir" },
-            { "id": "b", "text": "Apex" },
-            { "id": "c", "text": "Base" },
-            { "id": "d", "text": "Bottom" }
+            { "id": "a", "text": "perspicacious" },
+            { "id": "b", "text": "capricious" },
+            { "id": "c", "text": "judicious" },
+            { "id": "d", "text": "sagacious" }
           ],
           "correctOptionId": "b",
-          "type": "vocabulary_synonym"
+          "type": "vocabulary_contextual"
         },
         {
           "id": 2,
-          "text": "CACOPHONY",
+          "text": "Identify the sentence with correct usage of subjunctive mood:",
           "options": [
-            { "id": "a", "text": "Harmony" },
-            { "id": "b", "text": "Melody" },
-            { "id": "c", "text": "Discord" },
-            { "id": "d", "text": "Symphony" }
+            { "id": "a", "text": "If I was you, I would reconsider." },
+            { "id": "b", "text": "If I were you, I would reconsider." },
+            { "id": "c", "text": "If I am you, I would reconsider." },
+            { "id": "d", "text": "If I will be you, I would reconsider." }
           ],
-          "correctOptionId": "c",
-          "type": "vocabulary_synonym"
+          "correctOptionId": "b",
+          "type": "grammar_advanced"
         },
         {
           "id": 3,
-          "text": "ADULATION",
+          "text": "Choose the word that is LEAST similar in meaning to 'OBFUSCATE':",
           "options": [
-            { "id": "a", "text": "Criticism" },
-            { "id": "b", "text": "Flattery" },
-            { "id": "c", "text": "Scorn" },
-            { "id": "d", "text": "Dislike" }
+            { "id": "a", "text": "Mystify" },
+            { "id": "b", "text": "Clarify" },
+            { "id": "c", "text": "Confound" },
+            { "id": "d", "text": "Bewilder" }
           ],
           "correctOptionId": "b",
-          "type": "vocabulary_synonym"
+          "type": "vocabulary_antonym"
         },
         {
           "id": 4,
-          "text": "PERNICIOUS",
+          "text": "In the sentence 'The protagonist's quixotic endeavor ultimately proved futile', the word 'quixotic' most closely means:",
           "options": [
-            { "id": "a", "text": "Beneficial" },
-            { "id": "b", "text": "Harmless" },
-            { "id": "c", "text": "Destructive" },
-            { "id": "d", "text": "Trivial" }
+            { "id": "a", "text": "Realistic and practical" },
+            { "id": "b", "text": "Idealistic and impractical" },
+            { "id": "c", "text": "Calculated and strategic" },
+            { "id": "d", "text": "Pessimistic and cynical" }
           ],
-          "correctOptionId": "c",
-          "type": "vocabulary_synonym"
+          "correctOptionId": "b",
+          "type": "vocabulary_contextual"
         },
         {
           "id": 5,
-          "text": "EQUANIMITY",
+          "text": "Select the correct passive voice transformation of: 'The new policy will significantly impact the employees.'",
           "options": [
-            { "id": "a", "text": "Agitation" },
-            { "id": "b", "text": "Calmness" },
-            { "id": "c", "text": "Anxiety" },
-            { "id": "d", "text": "Fervor" }
+            {
+              "id": "a",
+              "text": "The employees will be significantly impacted by the new policy."
+            },
+            {
+              "id": "b",
+              "text": "The employees will significantly be impacted by the new policy."
+            },
+            {
+              "id": "c",
+              "text": "The employees will be impacted significantly by the new policy."
+            },
+            { "id": "d", "text": "The new policy will be significantly impacting the employees." }
+          ],
+          "correctOptionId": "a",
+          "type": "grammar_transformation"
+        },
+        {
+          "id": 6,
+          "text": "Choose the most appropriate synonym for 'PERSPICACIOUS':",
+          "options": [
+            { "id": "a", "text": "Obtuse" },
+            { "id": "b", "text": "Astute" },
+            { "id": "c", "text": "Naive" },
+            { "id": "d", "text": "Sluggish" }
           ],
           "correctOptionId": "b",
           "type": "vocabulary_synonym"
         },
         {
-          "id": 6,
-          "text": "OBLIVIOUS",
-          "options": [
-            { "id": "a", "text": "Aware" },
-            { "id": "b", "text": "Unaware" },
-            { "id": "c", "text": "Ignorant" },
-            { "id": "d", "text": "Thoughtless" }
-          ],
-          "correctOptionId": "a",
-          "type": "vocabulary_antonym"
-        },
-        {
           "id": 7,
-          "text": "SQUALID",
+          "text": "Identify the figure of speech in: 'The waves whispered secrets to the shore':",
           "options": [
-            { "id": "a", "text": "Dirty" },
-            { "id": "b", "text": "Pristine" },
-            { "id": "c", "text": "Grimy" },
-            { "id": "d", "text": "Neglected" }
+            { "id": "a", "text": "Metaphor" },
+            { "id": "b", "text": "Personification" },
+            { "id": "c", "text": "Hyperbole" },
+            { "id": "d", "text": "Alliteration" }
           ],
           "correctOptionId": "b",
-          "type": "vocabulary_antonym"
+          "type": "literary_devices"
         },
         {
           "id": 8,
-          "text": "PRODIGAL",
+          "text": "Complete the analogy: MENDACIOUS : TRUTHFUL :: PARSIMONIOUS : ?",
           "options": [
-            { "id": "a", "text": "Extravagant" },
-            { "id": "b", "text": "Wasteful" },
-            { "id": "c", "text": "Thrifty" },
-            { "id": "d", "text": "Lavish" }
+            { "id": "a", "text": "Generous" },
+            { "id": "b", "text": "Frugal" },
+            { "id": "c", "text": "Stingy" },
+            { "id": "d", "text": "Economical" }
           ],
-          "correctOptionId": "c",
-          "type": "vocabulary_antonym"
+          "correctOptionId": "a",
+          "type": "verbal_analogy"
         },
         {
           "id": 9,
-          "text": "MALIGN",
+          "text": "Which sentence demonstrates correct use of the gerund?",
           "options": [
-            { "id": "a", "text": "Slander" },
-            { "id": "b", "text": "Praise" },
-            { "id": "c", "text": "Defame" },
-            { "id": "d", "text": "Criticize" }
+            { "id": "a", "text": "I enjoy to read complex literature." },
+            { "id": "b", "text": "Reading complex literature is my passion." },
+            { "id": "c", "text": "I am read complex literature daily." },
+            { "id": "d", "text": "Complex literature read by me daily." }
           ],
           "correctOptionId": "b",
-          "type": "vocabulary_antonym"
+          "type": "grammar_advanced"
         },
         {
           "id": 10,
-          "text": "TANGIBLE",
+          "text": "The word 'UBIQUITOUS' is closest in meaning to:",
           "options": [
-            { "id": "a", "text": "Concrete" },
-            { "id": "b", "text": "Abstract" },
-            { "id": "c", "text": "Real" },
-            { "id": "d", "text": "Palpable" }
+            { "id": "a", "text": "Rare" },
+            { "id": "b", "text": "Omnipresent" },
+            { "id": "c", "text": "Conspicuous" },
+            { "id": "d", "text": "Elusive" }
           ],
           "correctOptionId": "b",
-          "type": "vocabulary_antonym"
+          "type": "vocabulary_synonym"
         },
         {
           "id": 11,
-          "text": "His success in the exam was **a bolt from the blue**.",
+          "text": "Choose the sentence with correct parallel structure:",
           "options": [
-            { "id": "a", "text": "a sudden surprise" },
-            { "id": "b", "text": "a planned event" },
-            { "id": "c", "text": "a difficult task" },
-            { "id": "d", "text": "an unexpected failure" }
+            { "id": "a", "text": "She likes dancing, singing, and to paint." },
+            { "id": "b", "text": "She likes dancing, singing, and painting." },
+            { "id": "c", "text": "She likes to dance, singing, and painting." },
+            { "id": "d", "text": "She likes dance, sing, and paint." }
           ],
-          "correctOptionId": "a",
-          "type": "idiom"
+          "correctOptionId": "b",
+          "type": "grammar_structure"
         },
         {
           "id": 12,
-          "text": "She decided to **burn the midnight oil** to finish her project on time.",
+          "text": "The antonym of 'EPHEMERAL' is:",
           "options": [
-            { "id": "a", "text": "waste time" },
-            { "id": "b", "text": "work late into the night" },
-            { "id": "c", "text": "relax" },
-            { "id": "d", "text": "procrastinate" }
+            { "id": "a", "text": "Temporary" },
+            { "id": "b", "text": "Permanent" },
+            { "id": "c", "text": "Brief" },
+            { "id": "d", "text": "Fleeting" }
           ],
           "correctOptionId": "b",
-          "type": "idiom"
-        },
-        {
-          "id": 13,
-          "text": "The company is **in a fix** after the sudden resignation of its CEO.",
-          "options": [
-            { "id": "a", "text": "in a good position" },
-            { "id": "b", "text": "in a difficult situation" },
-            { "id": "c", "text": "making quick progress" },
-            { "id": "d", "text": "feeling confident" }
-          ],
-          "correctOptionId": "b",
-          "type": "idiom"
-        },
-        {
-          "id": 14,
-          "text": "The CEO's decision was _______ by the board of directors.",
-          "options": [
-            { "id": "a", "text": "appealed" },
-            { "id": "b", "text": "apprehended" },
-            { "id": "c", "text": "applauded" },
-            { "id": "d", "text": "appalled" }
-          ],
-          "correctOptionId": "c",
-          "type": "fill_in_the_blanks"
-        },
-        {
-          "id": 15,
-          "text": "Despite numerous warnings, he continued to drive ______.",
-          "options": [
-            { "id": "a", "text": "responsibly" },
-            { "id": "b", "text": "carefully" },
-            { "id": "c", "text": "recklessly" },
-            { "id": "d", "text": "cautiously" }
-          ],
-          "correctOptionId": "c",
-          "type": "fill_in_the_blanks"
+          "type": "vocabulary_antonym"
         }
       ]
     },
     {
-      "id": "section-A-quantitative-aptitude",
+      "id": "section-A-quantitative",
       "title": "Quantitative Aptitude",
       "questions": [
         {
-          "id": 16,
-          "text": "If the cost price of 20 articles is equal to the selling price of 16 articles, find the gain or loss percent.",
+          "id": 13,
+          "text": "If log₂(x) + log₄(x) + log₈(x) = 11, find the value of x:",
           "options": [
-            { "id": "a", "text": "20% loss" },
-            { "id": "b", "text": "25% gain" },
-            { "id": "c", "text": "20% gain" },
-            { "id": "d", "text": "25% loss" }
+            { "id": "a", "text": "64" },
+            { "id": "b", "text": "128" },
+            { "id": "c", "text": "256" },
+            { "id": "d", "text": "512" }
+          ],
+          "correctOptionId": "c",
+          "type": "logarithms"
+        },
+        {
+          "id": 14,
+          "text": "A circular park has a walking track around its perimeter. If a person walks at 4 km/h along the track and another person walks at 6 km/h in the opposite direction, they meet every 12 minutes. What is the length of the track?",
+          "options": [
+            { "id": "a", "text": "1.5 km" },
+            { "id": "b", "text": "2 km" },
+            { "id": "c", "text": "2.5 km" },
+            { "id": "d", "text": "3 km" }
           ],
           "correctOptionId": "b",
-          "type": "word_problem"
+          "type": "time_speed_distance"
+        },
+        {
+          "id": 15,
+          "text": "In how many ways can 8 people be arranged in a circle such that 3 specific people are never together?",
+          "options": [
+            { "id": "a", "text": "3600" },
+            { "id": "b", "text": "4320" },
+            { "id": "c", "text": "2880" },
+            { "id": "d", "text": "1440" }
+          ],
+          "correctOptionId": "c",
+          "type": "permutation_combination"
+        },
+        {
+          "id": 16,
+          "text": "If the roots of the equation x² - px + q = 0 are α and β, and the roots of x² - rx + s = 0 are α² and β², then s equals:",
+          "options": [
+            { "id": "a", "text": "q²" },
+            { "id": "b", "text": "p² - 2q" },
+            { "id": "c", "text": "(p² - 2q)²" },
+            { "id": "d", "text": "q² - p" }
+          ],
+          "correctOptionId": "a",
+          "type": "quadratic_equations"
         },
         {
           "id": 17,
-          "text": "A train 120m long is running at a speed of 50 km/hr. How long will it take to cross a platform 130m long?",
+          "text": "A bag contains 12 balls: 5 red, 4 blue, and 3 green. If 3 balls are drawn without replacement, what is the probability that all three are of different colors?",
           "options": [
-            { "id": "a", "text": "18 seconds" },
-            { "id": "b", "text": "20 seconds" },
-            { "id": "c", "text": "25 seconds" },
-            { "id": "d", "text": "30 seconds" }
-          ],
-          "correctOptionId": "a",
-          "type": "word_problem"
-        },
-        {
-          "id": 18,
-          "text": "The average age of 30 students and their teacher is 15 years. If the average age of the 30 students is 14 years, what is the age of the teacher?",
-          "options": [
-            { "id": "a", "text": "30 years" },
-            { "id": "b", "text": "45 years" },
-            { "id": "c", "text": "44 years" },
-            { "id": "d", "text": "50 years" }
+            { "id": "a", "text": "6/11" },
+            { "id": "b", "text": "3/11" },
+            { "id": "c", "text": "4/11" },
+            { "id": "d", "text": "5/11" }
           ],
           "correctOptionId": "b",
-          "type": "word_problem"
-        },
-        {
-          "id": 19,
-          "text": "If A can do a piece of work in 10 days and B can do it in 15 days, in how many days can A and B together complete the work?",
-          "options": [
-            { "id": "a", "text": "5 days" },
-            { "id": "b", "text": "6 days" },
-            { "id": "c", "text": "7.5 days" },
-            { "id": "d", "text": "8 days" }
-          ],
-          "correctOptionId": "b",
-          "type": "word_problem"
-        },
-        {
-          "id": 20,
-          "text": "What is the sum of the first 20 odd numbers?",
-          "options": [
-            { "id": "a", "text": "200" },
-            { "id": "b", "text": "210" },
-            { "id": "c", "text": "400" },
-            { "id": "d", "text": "420" }
-          ],
-          "correctOptionId": "c",
-          "type": "mathematical"
-        },
-        {
-          "id": 21,
-          "text": "A sum of money doubles itself in 8 years at simple interest. In how many years will it become four times?",
-          "options": [
-            { "id": "a", "text": "16 years" },
-            { "id": "b", "text": "24 years" },
-            { "id": "c", "text": "32 years" },
-            { "id": "d", "text": "40 years" }
-          ],
-          "correctOptionId": "b",
-          "type": "word_problem"
-        },
-        {
-          "id": 22,
-          "text": "The ratio of two numbers is 3:4. If their HCF is 4, find their LCM.",
-          "options": [
-            { "id": "a", "text": "12" },
-            { "id": "b", "text": "16" },
-            { "id": "c", "text": "48" },
-            { "id": "d", "text": "64" }
-          ],
-          "correctOptionId": "c",
-          "type": "mathematical"
-        },
-        {
-          "id": 23,
-          "text": "A shopkeeper allows a discount of 10% on the marked price of an item. If he sells the item for ₹900, what is the marked price?",
-          "options": [
-            { "id": "a", "text": "₹810" },
-            { "id": "b", "text": "₹990" },
-            { "id": "c", "text": "₹1000" },
-            { "id": "d", "text": "₹1100" }
-          ],
-          "correctOptionId": "c",
-          "type": "word_problem"
-        },
-        {
-          "id": 24,
-          "text": "The area of a circle is $154 cm^2$. What is its circumference? (Use $\\pi = \\frac{22}{7}$)",
-          "options": [
-            { "id": "a", "text": "22 cm" },
-            { "id": "b", "text": "33 cm" },
-            { "id": "c", "text": "44 cm" },
-            { "id": "d", "text": "55 cm" }
-          ],
-          "correctOptionId": "c",
-          "type": "mathematical"
-        },
-        {
-          "id": 25,
-          "text": "A bag contains 3 red, 4 blue, and 5 green balls. If one ball is drawn at random, what is the probability that it is a blue ball?",
-          "options": [
-            { "id": "a", "text": "$\\frac{1}{3}$" },
-            { "id": "b", "text": "$\\frac{1}{4}$" },
-            { "id": "c", "text": "$\\frac{1}{5}$" },
-            { "id": "d", "text": "$\\frac{1}{12}$" }
-          ],
-          "correctOptionId": "a",
           "type": "probability"
         },
         {
-          "id": 26,
-          "text": "If $x + \\frac{1}{x} = 5$, then find the value of $x^2 + \\frac{1}{x^2}$.",
+          "id": 18,
+          "text": "If sin θ + cos θ = √2, find the value of sin θ × cos θ:",
           "options": [
-            { "id": "a", "text": "23" },
-            { "id": "b", "text": "25" },
-            { "id": "c", "text": "27" },
-            { "id": "d", "text": "21" }
+            { "id": "a", "text": "1/2" },
+            { "id": "b", "text": "1/4" },
+            { "id": "c", "text": "1" },
+            { "id": "d", "text": "√2/2" }
           ],
           "correctOptionId": "a",
-          "type": "mathematical"
+          "type": "trigonometry"
         },
         {
-          "id": 27,
-          "text": "The population of a town increases by 10% every year. If the current population is 20,000, what will be the population after 2 years?",
+          "id": 19,
+          "text": "The sum of first n terms of an arithmetic progression is n²/2(2a + (n-1)d). If the sum of first 10 terms is 235 and the sum of first 20 terms is 870, find the 15th term:",
           "options": [
-            { "id": "a", "text": "22,000" },
-            { "id": "b", "text": "24,000" },
-            { "id": "c", "text": "24,200" },
-            { "id": "d", "text": "25,000" }
+            { "id": "a", "text": "43" },
+            { "id": "b", "text": "45" },
+            { "id": "c", "text": "47" },
+            { "id": "d", "text": "49" }
           ],
           "correctOptionId": "c",
-          "type": "word_problem"
+          "type": "arithmetic_progression"
         },
         {
-          "id": 28,
-          "text": "A man travels from point A to point B at a speed of 20 km/hr and returns from B to A at a speed of 30 km/hr. What is his average speed for the entire journey?",
+          "id": 20,
+          "text": "In a geometric progression, if the 3rd term is 12 and the 6th term is 96, find the 9th term:",
           "options": [
-            { "id": "a", "text": "25 km/hr" },
-            { "id": "b", "text": "24 km/hr" },
-            { "id": "c", "text": "22 km/hr" },
-            { "id": "d", "text": "20 km/hr" }
-          ],
-          "correctOptionId": "b",
-          "type": "word_problem"
-        },
-        {
-          "id": 29,
-          "text": "Find the next term in the series: 2, 5, 10, 17, 26, ?",
-          "options": [
-            { "id": "a", "text": "35" },
-            { "id": "b", "text": "37" },
-            { "id": "c", "text": "40" },
-            { "id": "d", "text": "42" }
-          ],
-          "correctOptionId": "b",
-          "type": "series_completion"
-        },
-        {
-          "id": 30,
-          "text": "If P is the brother of Q, Q is the sister of R, and R is the father of S, how is S related to P?",
-          "options": [
-            { "id": "a", "text": "Son" },
-            { "id": "b", "text": "Daughter" },
-            { "id": "c", "text": "Nephew/Niece" },
-            { "id": "d", "text": "Brother" }
+            { "id": "a", "text": "384" },
+            { "id": "b", "text": "512" },
+            { "id": "c", "text": "768" },
+            { "id": "d", "text": "1024" }
           ],
           "correctOptionId": "c",
-          "type": "blood_relations"
+          "type": "geometric_progression"
         },
         {
-          "id": 31,
-          "text": "In a certain code language, \"CAT\" is coded as \"3120\". How is \"DOG\" coded in that language?",
+          "id": 21,
+          "text": "If ∫₀² f(x)dx = 8 and ∫₀² g(x)dx = 3, find ∫₀² [2f(x) - 3g(x)]dx:",
           "options": [
-            { "id": "a", "text": "4157" },
-            { "id": "b", "text": "40157" },
-            { "id": "c", "text": "41507" },
-            { "id": "d", "text": "40715" }
+            { "id": "a", "text": "5" },
+            { "id": "b", "text": "7" },
+            { "id": "c", "text": "9" },
+            { "id": "d", "text": "11" }
           ],
           "correctOptionId": "b",
-          "type": "coding_decoding"
+          "type": "calculus"
         },
         {
-          "id": 32,
-          "text": "A cube of side 5 cm is painted on all its faces. If it is then cut into smaller cubes of side 1 cm, how many smaller cubes will have exactly one face painted?",
+          "id": 22,
+          "text": "A merchant marks his goods 40% above cost price and gives a discount of 25%. If he still makes a profit of Rs. 210 on an article, find the cost price:",
           "options": [
-            { "id": "a", "text": "54" },
-            { "id": "b", "text": "48" },
-            { "id": "c", "text": "36" },
-            { "id": "d", "text": "24" }
+            { "id": "a", "text": "Rs. 1800" },
+            { "id": "b", "text": "Rs. 2000" },
+            { "id": "c", "text": "Rs. 2100" },
+            { "id": "d", "text": "Rs. 2400" }
+          ],
+          "correctOptionId": "b",
+          "type": "profit_loss"
+        },
+        {
+          "id": 23,
+          "text": "The compound interest on a sum for 2 years at 10% per annum is Rs. 420. Find the simple interest on the same sum for the same period at the same rate:",
+          "options": [
+            { "id": "a", "text": "Rs. 380" },
+            { "id": "b", "text": "Rs. 400" },
+            { "id": "c", "text": "Rs. 420" },
+            { "id": "d", "text": "Rs. 440" }
+          ],
+          "correctOptionId": "b",
+          "type": "compound_interest"
+        },
+        {
+          "id": 24,
+          "text": "If x³ - 6x² + 11x - 6 = 0, find the sum of squares of the roots:",
+          "options": [
+            { "id": "a", "text": "14" },
+            { "id": "b", "text": "16" },
+            { "id": "c", "text": "18" },
+            { "id": "d", "text": "20" }
           ],
           "correctOptionId": "a",
-          "type": "geometry_mensuration"
+          "type": "cubic_equations"
         },
         {
-          "id": 33,
-          "text": "What is the value of $(1.2)^3 - (0.8)^3 - (0.4)^3$?",
+          "id": 25,
+          "text": "A boat can travel 20 km downstream in the same time it takes to travel 12 km upstream. If the speed of the current is 2 km/h, find the speed of the boat in still water:",
           "options": [
-            { "id": "a", "text": "0.192" },
-            { "id": "b", "text": "0.576" },
-            { "id": "c", "text": "1.728" },
-            { "id": "d", "text": "0" }
+            { "id": "a", "text": "14 km/h" },
+            { "id": "b", "text": "16 km/h" },
+            { "id": "c", "text": "18 km/h" },
+            { "id": "d", "text": "20 km/h" }
           ],
           "correctOptionId": "b",
-          "type": "mathematical"
-        },
-        {
-          "id": 34,
-          "text": "A certain amount of money is distributed among A, B, and C in the ratio 2:3:5. If B gets ₹1200, what is the total amount of money distributed?",
-          "options": [
-            { "id": "a", "text": "₹2400" },
-            { "id": "b", "text": "₹3600" },
-            { "id": "c", "text": "₹4000" },
-            { "id": "d", "text": "₹4800" }
-          ],
-          "correctOptionId": "c",
-          "type": "word_problem"
-        },
-        {
-          "id": 35,
-          "text": "The LCM of two numbers is 180 and their HCF is 6. If one of the numbers is 30, what is the other number?",
-          "options": [
-            { "id": "a", "text": "36" },
-            { "id": "b", "text": "48" },
-            { "id": "c", "text": "54" },
-            { "id": "d", "text": "60" }
-          ],
-          "correctOptionId": "a",
-          "type": "mathematical"
+          "type": "boats_streams"
         }
       ]
     },
@@ -442,160 +331,310 @@
       "title": "Reasoning",
       "questions": [
         {
-          "id": 36,
-          "text": "4, 9, 16, 25, ?",
+          "id": 26,
+          "text": "In a certain code language, 'SYSTEM' is written as 'TZTUFN'. How will 'PROGRAM' be written in that code?",
           "options": [
-            { "id": "a", "text": "30" },
-            { "id": "b", "text": "36" },
-            { "id": "c", "text": "49" },
-            { "id": "d", "text": "64" }
+            { "id": "a", "text": "QSPHSBN" },
+            { "id": "b", "text": "QSQHSBN" },
+            { "id": "c", "text": "QSPHSBM" },
+            { "id": "d", "text": "QSQHSBM" }
+          ],
+          "correctOptionId": "a",
+          "type": "coding_decoding"
+        },
+        {
+          "id": 27,
+          "text": "If 'DEMOCRACY' is related to 'YCARCOMED' in the same way as 'REPUBLIC' is related to:",
+          "options": [
+            { "id": "a", "text": "CILBUPER" },
+            { "id": "b", "text": "CXLBUPER" },
+            { "id": "c", "text": "RXLBUPER" },
+            { "id": "d", "text": "CILBUPXR" }
+          ],
+          "correctOptionId": "a",
+          "type": "analogy"
+        },
+        {
+          "id": 28,
+          "text": "In a row of students, A is 15th from the left and B is 18th from the right. If there are 4 students between A and B, how many students are there in the row?",
+          "options": [
+            { "id": "a", "text": "36" },
+            { "id": "b", "text": "37" },
+            { "id": "c", "text": "38" },
+            { "id": "d", "text": "Cannot be determined" }
+          ],
+          "correctOptionId": "d",
+          "type": "seating_arrangement"
+        },
+        {
+          "id": 29,
+          "text": "Complete the series: 2, 6, 12, 20, 30, ?",
+          "options": [
+            { "id": "a", "text": "40" },
+            { "id": "b", "text": "42" },
+            { "id": "c", "text": "44" },
+            { "id": "d", "text": "46" }
           ],
           "correctOptionId": "b",
           "type": "number_series"
         },
         {
-          "id": 37,
-          "text": "A, C, F, J, O, ?",
+          "id": 30,
+          "text": "Five friends P, Q, R, S, and T are sitting in a row. P and S are not adjacent. Q is to the immediate right of R. T is not at either end. Which of the following arrangements is possible?",
           "options": [
-            { "id": "a", "text": "T" },
-            { "id": "b", "text": "U" },
-            { "id": "c", "text": "V" },
-            { "id": "d", "text": "W" }
+            { "id": "a", "text": "P-R-Q-T-S" },
+            { "id": "b", "text": "S-R-Q-T-P" },
+            { "id": "c", "text": "R-Q-T-P-S" },
+            { "id": "d", "text": "P-T-R-Q-S" }
           ],
           "correctOptionId": "b",
-          "type": "alphabetic_series"
+          "type": "logical_arrangement"
         },
         {
-          "id": 38,
-          "text": "Z, X, V, T, R, ?",
+          "id": 31,
+          "text": "Find the missing number in the series: 4, 6, 12, 14, 28, 30, ?",
           "options": [
-            { "id": "a", "text": "P" },
-            { "id": "b", "text": "Q" },
-            { "id": "c", "text": "S" },
-            { "id": "d", "text": "O" }
-          ],
-          "correctOptionId": "a",
-          "type": "alphabetic_series"
-        },
-        {
-          "id": 39,
-          "text": "Find the odd one out.",
-          "options": [
-            { "id": "a", "text": "Apple" },
-            { "id": "b", "text": "Banana" },
-            { "id": "c", "text": "Potato" },
-            { "id": "d", "text": "Grape" }
+            { "id": "a", "text": "56" },
+            { "id": "b", "text": "58" },
+            { "id": "c", "text": "60" },
+            { "id": "d", "text": "62" }
           ],
           "correctOptionId": "c",
-          "type": "odd_one_out"
+          "type": "number_series"
         },
         {
-          "id": 40,
-          "text": "Find the odd one out.",
+          "id": 32,
+          "text": "In a coded message, 'FRIEND' is written as 'GSJFOE'. How will 'ENEMY' be coded?",
           "options": [
-            { "id": "a", "text": "Circle" },
-            { "id": "b", "text": "Square" },
-            { "id": "c", "text": "Triangle" },
-            { "id": "d", "text": "Rhombus" }
+            { "id": "a", "text": "FOFNZ" },
+            { "id": "b", "text": "FOFMY" },
+            { "id": "c", "text": "FMFNZ" },
+            { "id": "d", "text": "FMENZ" }
           ],
           "correctOptionId": "a",
-          "type": "odd_one_out"
-        },
-        {
-          "id": 41,
-          "text": "Find the odd one out.",
-          "options": [
-            { "id": "a", "text": "Doctor" },
-            { "id": "b", "text": "Engineer" },
-            { "id": "c", "text": "Lawyer" },
-            { "id": "d", "text": "Patient" }
-          ],
-          "correctOptionId": "d",
-          "type": "odd_one_out"
-        },
-        {
-          "id": 42,
-          "text": "Book : Author :: Painting : ?",
-          "options": [
-            { "id": "a", "text": "Artist" },
-            { "id": "b", "text": "Canvas" },
-            { "id": "c", "text": "Brush" },
-            { "id": "d", "text": "Color" }
-          ],
-          "correctOptionId": "a",
-          "type": "analogy"
-        },
-        {
-          "id": 43,
-          "text": "Warm : Hot :: Cool : ?",
-          "options": [
-            { "id": "a", "text": "Cold" },
-            { "id": "b", "text": "Freezing" },
-            { "id": "c", "text": "Mild" },
-            { "id": "d", "text": "Winter" }
-          ],
-          "correctOptionId": "b",
-          "type": "analogy"
-        },
-        {
-          "id": 44,
-          "text": "If in a certain code, BREAKDOWN is written as NRKBAWOED, how is TRIANGLE written in that code?",
-          "options": [
-            { "id": "a", "text": "ELGNARTI" },
-            { "id": "b", "text": "LGNAERIT" },
-            { "id": "c", "text": "LGNRTIAE" },
-            { "id": "d", "text": "LGNERITA" }
-          ],
-          "correctOptionId": "b",
           "type": "coding_decoding"
         },
         {
-          "id": 45,
-          "text": "Pointing to a photograph, a man said, \"I have no brother or sister but that man's father is my father's son.\" Whose photograph was it?",
+          "id": 33,
+          "text": "A cube is painted on all faces and then cut into 64 smaller cubes of equal size. How many smaller cubes will have exactly two faces painted?",
           "options": [
-            { "id": "a", "text": "His son" },
-            { "id": "b", "text": "His father" },
-            { "id": "c", "text": "His uncle" },
-            { "id": "d", "text": "His nephew" }
+            { "id": "a", "text": "8" },
+            { "id": "b", "text": "12" },
+            { "id": "c", "text": "16" },
+            { "id": "d", "text": "24" }
+          ],
+          "correctOptionId": "d",
+          "type": "spatial_reasoning"
+        },
+        {
+          "id": 34,
+          "text": "If ROSE is coded as 6821, CHAIR is coded as 73456, and SEARCH is coded as 216734, then what is the code for SHARE?",
+          "options": [
+            { "id": "a", "text": "23561" },
+            { "id": "b", "text": "23456" },
+            { "id": "c", "text": "27361" },
+            { "id": "d", "text": "27456" }
+          ],
+          "correctOptionId": "c",
+          "type": "coding_decoding"
+        },
+        {
+          "id": 35,
+          "text": "In a certain language, 'ka na ta' means 'I am happy', 'ka ta ma' means 'I am sad', and 'na ma la' means 'happy sad today'. What does 'la' mean?",
+          "options": [
+            { "id": "a", "text": "happy" },
+            { "id": "b", "text": "sad" },
+            { "id": "c", "text": "today" },
+            { "id": "d", "text": "I" }
+          ],
+          "correctOptionId": "c",
+          "type": "logical_deduction"
+        },
+        {
+          "id": 36,
+          "text": "If all Bloops are Razzles and all Razzles are Lazzles, then which statement is definitely true?",
+          "options": [
+            { "id": "a", "text": "All Lazzles are Bloops" },
+            { "id": "b", "text": "All Bloops are Lazzles" },
+            { "id": "c", "text": "Some Lazzles are Bloops" },
+            { "id": "d", "text": "No Bloops are Lazzles" }
+          ],
+          "correctOptionId": "b",
+          "type": "syllogism"
+        },
+        {
+          "id": 37,
+          "text": "Find the next term in the sequence: 1, 8, 27, 64, ?",
+          "options": [
+            { "id": "a", "text": "100" },
+            { "id": "b", "text": "125" },
+            { "id": "c", "text": "144" },
+            { "id": "d", "text": "216" }
+          ],
+          "correctOptionId": "b",
+          "type": "number_series"
+        },
+        {
+          "id": 38,
+          "text": "In a queue, Arun is 10th from the front and Vijay is 25th from the back. If there are 5 persons between Arun and Vijay, find the minimum number of persons in the queue:",
+          "options": [
+            { "id": "a", "text": "39" },
+            { "id": "b", "text": "40" },
+            { "id": "c", "text": "41" },
+            { "id": "d", "text": "42" }
           ],
           "correctOptionId": "a",
-          "type": "blood_relations"
+          "type": "seating_arrangement"
+        }
+      ]
+    },
+    {
+      "id": "section-A-computer-fundamentals",
+      "title": "Computer Fundamentals & Programming Concepts",
+      "questions": [
+        {
+          "id": 39,
+          "text": "In the context of computer architecture, what is the primary advantage of Harvard architecture over Von Neumann architecture?",
+          "options": [
+            { "id": "a", "text": "Lower cost implementation" },
+            { "id": "b", "text": "Simultaneous access to instructions and data" },
+            { "id": "c", "text": "Simpler memory management" },
+            { "id": "d", "text": "Better compatibility with existing software" }
+          ],
+          "correctOptionId": "b",
+          "type": "computer_architecture"
+        },
+        {
+          "id": 40,
+          "text": "Which of the following best describes the time complexity of merge sort in the worst case?",
+          "options": [
+            { "id": "a", "text": "O(n)" },
+            { "id": "b", "text": "O(n log n)" },
+            { "id": "c", "text": "O(n²)" },
+            { "id": "d", "text": "O(2ⁿ)" }
+          ],
+          "correctOptionId": "b",
+          "type": "algorithm_complexity"
+        },
+        {
+          "id": 41,
+          "text": "In object-oriented programming, which principle ensures that the internal representation of an object is hidden from the outside?",
+          "options": [
+            { "id": "a", "text": "Inheritance" },
+            { "id": "b", "text": "Polymorphism" },
+            { "id": "c", "text": "Encapsulation" },
+            { "id": "d", "text": "Abstraction" }
+          ],
+          "correctOptionId": "c",
+          "type": "oop_concepts"
+        },
+        {
+          "id": 42,
+          "text": "What is the result of the following expression in most programming languages: 7 >> 2?",
+          "options": [
+            { "id": "a", "text": "1" },
+            { "id": "b", "text": "2" },
+            { "id": "c", "text": "3" },
+            { "id": "d", "text": "14" }
+          ],
+          "correctOptionId": "a",
+          "type": "bitwise_operations"
+        },
+        {
+          "id": 43,
+          "text": "In database normalization, which normal form eliminates transitive dependencies?",
+          "options": [
+            { "id": "a", "text": "First Normal Form (1NF)" },
+            { "id": "b", "text": "Second Normal Form (2NF)" },
+            { "id": "c", "text": "Third Normal Form (3NF)" },
+            { "id": "d", "text": "Boyce-Codd Normal Form (BCNF)" }
+          ],
+          "correctOptionId": "c",
+          "type": "database_concepts"
+        },
+        {
+          "id": 44,
+          "text": "Which data structure is most efficient for implementing a priority queue?",
+          "options": [
+            { "id": "a", "text": "Array" },
+            { "id": "b", "text": "Linked List" },
+            { "id": "c", "text": "Binary Heap" },
+            { "id": "d", "text": "Stack" }
+          ],
+          "correctOptionId": "c",
+          "type": "data_structures"
+        },
+        {
+          "id": 45,
+          "text": "In TCP/IP networking, which layer is responsible for routing packets across networks?",
+          "options": [
+            { "id": "a", "text": "Physical Layer" },
+            { "id": "b", "text": "Data Link Layer" },
+            { "id": "c", "text": "Network Layer" },
+            { "id": "d", "text": "Transport Layer" }
+          ],
+          "correctOptionId": "c",
+          "type": "networking"
         },
         {
           "id": 46,
-          "text": "Six friends P, Q, R, S, T, and U are sitting in a circle facing the center. P is to the immediate left of R. Q is between S and U. T is between P and S. Who is to the immediate right of U?",
+          "text": "What is the space complexity of the quicksort algorithm in the average case?",
           "options": [
-            { "id": "a", "text": "S" },
-            { "id": "b", "text": "Q" },
-            { "id": "c", "text": "R" },
-            { "id": "d", "text": "P" }
+            { "id": "a", "text": "O(1)" },
+            { "id": "b", "text": "O(log n)" },
+            { "id": "c", "text": "O(n)" },
+            { "id": "d", "text": "O(n²)" }
           ],
           "correctOptionId": "b",
-          "type": "seating_arrangement"
+          "type": "algorithm_complexity"
         },
         {
           "id": 47,
-          "text": "Six friends P, Q, R, S, T, and U are sitting in a circle facing the center. P is to the immediate left of R. Q is between S and U. T is between P and S. Who is sitting opposite to P?",
+          "text": "Which of the following is NOT a characteristic of functional programming?",
           "options": [
-            { "id": "a", "text": "S" },
-            { "id": "b", "text": "U" },
-            { "id": "c", "text": "Q" },
-            { "id": "d", "text": "T" }
+            { "id": "a", "text": "Immutability" },
+            { "id": "b", "text": "Higher-order functions" },
+            { "id": "c", "text": "Side effects" },
+            { "id": "d", "text": "Pure functions" }
           ],
-          "correctOptionId": "b",
-          "type": "seating_arrangement"
+          "correctOptionId": "c",
+          "type": "programming_paradigms"
         },
         {
           "id": 48,
-          "text": "Six friends P, Q, R, S, T, and U are sitting in a circle facing the center. P is to the immediate left of R. Q is between S and U. T is between P and S. Which of the following pairs has the first person sitting to the immediate right of the second person?",
+          "text": "In computer graphics, what does the term 'rasterization' refer to?",
           "options": [
-            { "id": "a", "text": "RT" },
-            { "id": "b", "text": "TP" },
-            { "id": "c", "text": "US" },
-            { "id": "d", "text": "QP" }
+            { "id": "a", "text": "Converting vector graphics to bitmap" },
+            { "id": "b", "text": "Compressing image files" },
+            { "id": "c", "text": "Applying texture to 3D models" },
+            { "id": "d", "text": "Calculating lighting effects" }
+          ],
+          "correctOptionId": "a",
+          "type": "computer_graphics"
+        },
+        {
+          "id": 49,
+          "text": "Which cache replacement policy is most likely to minimize page faults in a system with temporal locality?",
+          "options": [
+            { "id": "a", "text": "FIFO (First In First Out)" },
+            { "id": "b", "text": "LRU (Least Recently Used)" },
+            { "id": "c", "text": "Random" },
+            { "id": "d", "text": "LIFO (Last In First Out)" }
           ],
           "correctOptionId": "b",
-          "type": "seating_arrangement"
+          "type": "operating_systems"
+        },
+        {
+          "id": 50,
+          "text": "In machine learning, what is the primary purpose of cross-validation?",
+          "options": [
+            { "id": "a", "text": "To increase training data size" },
+            { "id": "b", "text": "To assess model performance and prevent overfitting" },
+            { "id": "c", "text": "To reduce computational complexity" },
+            { "id": "d", "text": "To clean and preprocess data" }
+          ],
+          "correctOptionId": "b",
+          "type": "machine_learning"
         }
       ]
     }
