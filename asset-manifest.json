@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/mcq-test-platform/static/css/main.71290fa8.css",
-    "main.js": "/mcq-test-platform/static/js/main.f76ca423.js",
+    "main.js": "/mcq-test-platform/static/js/main.935b2e74.js",
     "static/js/453.c94920f0.chunk.js": "/mcq-test-platform/static/js/453.c94920f0.chunk.js",
     "index.html": "/mcq-test-platform/index.html",
     "main.71290fa8.css.map": "/mcq-test-platform/static/css/main.71290fa8.css.map",
-    "main.f76ca423.js.map": "/mcq-test-platform/static/js/main.f76ca423.js.map",
+    "main.935b2e74.js.map": "/mcq-test-platform/static/js/main.935b2e74.js.map",
     "453.c94920f0.chunk.js.map": "/mcq-test-platform/static/js/453.c94920f0.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.71290fa8.css",
-    "static/js/main.f76ca423.js"
+    "static/js/main.935b2e74.js"
   ]
 }
