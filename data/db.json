@@ -19,16 +19,6 @@
       "difficulty": "intermediate",
       "estimatedDuration": 120,
       "isActive": true
-    },
-    {
-      "id": "sample-math-test",
-      "title": "Sample Mathematics Test",
-      "description": "A sample mathematics test demonstrating algebra and geometry questions",
-      "file": "tests/test2/sample-math-test.json",
-      "category": "mathematics",
-      "difficulty": "beginner",
-      "estimatedDuration": 30,
-      "isActive": true
     }
   ],
   "metadata": {

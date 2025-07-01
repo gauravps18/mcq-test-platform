@@ -32,8 +32,28 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build project
-        run: npm run build
+      - name: Validate test data
+        run: npm run validate
+
+      - name: Build React project with static API
+        run: npm run build:static
+        env:
+          CI: false
+
+      - name: Create deployment info
+        run: |
+          echo "# MCQ Test Platform - Static Deployment" > build/DEPLOYMENT_INFO.md
+          echo "" >> build/DEPLOYMENT_INFO.md
+          echo "This is a static deployment of the MCQ Test Platform." >> build/DEPLOYMENT_INFO.md
+          echo "Generated on: $(date)" >> build/DEPLOYMENT_INFO.md
+          echo "" >> build/DEPLOYMENT_INFO.md
+          echo "## Available API Endpoints (Static):" >> build/DEPLOYMENT_INFO.md
+          echo "- \`/api/db.json\` - Main database" >> build/DEPLOYMENT_INFO.md
+          echo "- \`/api/tests.json\` - All active tests" >> build/DEPLOYMENT_INFO.md
+          echo "- \`/api/tests-{id}.json\` - Individual test by ID" >> build/DEPLOYMENT_INFO.md
+          echo "- \`/api/test-files.json\` - List of available test files" >> build/DEPLOYMENT_INFO.md
+          echo "- \`/api/testfiles/{folder}/{filename}\` - Direct test file access" >> build/DEPLOYMENT_INFO.md
+          echo "- \`/api/deployment-info.json\` - Deployment metadata" >> build/DEPLOYMENT_INFO.md
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
