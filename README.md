@@ -18,6 +18,10 @@ A comprehensive React-based platform for taking multiple-choice question tests w
 - **Responsive Design**: Works seamlessly on desktop and mobile devices
 - **LaTeX Support**: Mathematical expressions rendered beautifully
 - **Instant Feedback**: Immediate result calculation after submission
+- **Confirmation Dialogs**:
+  - Page refresh protection during active tests
+  - Test submission confirmation with custom modal
+  - Prevents accidental data loss
 
 ### Analytics & Results
 
