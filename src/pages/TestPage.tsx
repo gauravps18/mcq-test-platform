@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useTest } from '../context/TestContext';
 import Question from '../components/Question';
@@ -27,20 +27,19 @@ const TestPage: React.FC = () => {
   const [timeRemaining, setTimeRemaining] = useState<number>(60 * 60); // 60 minutes in seconds
 
   // Helper function to get the current test identifier for navigation
-  const getCurrentTestId = () => {
+  const getCurrentTestId = useCallback(() => {
     if (testGroupId && sectionId) {
       // Map to the same format used for loading the test
       const sectionLetter = sectionId.includes('section-A') ? 'A' : 'B';
       return `c-cat-section-${sectionLetter}`;
     }
     return testId;
-  };
+  }, [testGroupId, sectionId, testId]);
 
   // Load the test
   useEffect(() => {
     if (testGroupId && sectionId) {
       // New hierarchical structure - map to existing test ID
-      const testNumber = testGroupId.replace('test', '');
       const sectionLetter = sectionId.includes('section-A') ? 'A' : 'B';
       const mappedTestId = `c-cat-section-${sectionLetter}`;
       loadTest(mappedTestId);
@@ -48,7 +47,7 @@ const TestPage: React.FC = () => {
       // Original structure
       loadTest(testId);
     }
-  }, [testId, testGroupId, sectionId]);
+  }, [testId, testGroupId, sectionId, loadTest]);
 
   // Timer functionality
   useEffect(() => {
@@ -70,7 +69,7 @@ const TestPage: React.FC = () => {
     return () => {
       if (timer) clearInterval(timer);
     };
-  }, [loading, currentTest, testId, navigate]);
+  }, [loading, currentTest, testId, getCurrentTestId, navigate]);
 
   if (loading) {
     return (
