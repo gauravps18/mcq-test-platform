@@ -1,4 +1,4 @@
-import { Test, TestWithMetadata, TestGroup } from '../types';
+import { Test, TestGroup } from '../types';
 import { dataLoader } from './dataLoader';
 
 /**
