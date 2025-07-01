@@ -50,7 +50,7 @@ export class DataLoader {
         // For production, use static file path
         url = `/data/${filePath}`;
       }
-      
+
       const response = await axios.get(url);
       const test = response.data;
 

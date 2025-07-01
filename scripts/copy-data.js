@@ -22,11 +22,11 @@ if (!fs.existsSync(publicTestsDir)) {
 const testsSourceDir = path.join(__dirname, '..', 'data', 'tests');
 const copyTestFiles = (sourceDir, destDir) => {
   const items = fs.readdirSync(sourceDir);
-  
-  items.forEach(item => {
+
+  items.forEach((item) => {
     const sourcePath = path.join(sourceDir, item);
     const destPath = path.join(destDir, item);
-    
+
     if (fs.statSync(sourcePath).isDirectory()) {
       if (!fs.existsSync(destPath)) {
         fs.mkdirSync(destPath, { recursive: true });
