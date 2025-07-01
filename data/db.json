@@ -1,0 +1,41 @@
+{
+  "tests": [
+    {
+      "id": "c-cat-section-A",
+      "title": "C-CAT Exam - Section A",
+      "description": "Computer Science Aptitude Test - Section A covering English, Logical Reasoning, and Quantitative Aptitude",
+      "file": "tests/test1/c-cat-section-A.json",
+      "category": "entrance-exam",
+      "difficulty": "intermediate",
+      "estimatedDuration": 120,
+      "isActive": true
+    },
+    {
+      "id": "c-cat-section-B",
+      "title": "C-CAT Exam - Section B",
+      "description": "Computer Science Aptitude Test - Section B covering Computer Fundamentals, Programming, and Data Structures",
+      "file": "tests/test1/c-cat-section-B.json",
+      "category": "entrance-exam",
+      "difficulty": "intermediate",
+      "estimatedDuration": 120,
+      "isActive": true
+    },
+    {
+      "id": "sample-math-test",
+      "title": "Sample Mathematics Test",
+      "description": "A sample mathematics test demonstrating algebra and geometry questions",
+      "file": "tests/test2/sample-math-test.json",
+      "category": "mathematics",
+      "difficulty": "beginner",
+      "estimatedDuration": 30,
+      "isActive": true
+    }
+  ],
+  "metadata": {
+    "version": "2.0.0",
+    "lastUpdated": "2024-01-01T00:00:00Z",
+    "totalTests": 3,
+    "categories": ["entrance-exam", "mathematics"],
+    "difficulties": ["beginner", "intermediate", "advanced"]
+  }
+}
