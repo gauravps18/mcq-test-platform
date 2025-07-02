@@ -1951,153 +1951,35 @@ small,
   }
 }
 
-/* Animation keyframes */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* Detailed Results Page Layout */
+.detailed-result-page {
+  background-color: #121212;
 }
 
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+.left-panel .section-tabs-vertical {
+  border: none;
+  border-radius: 0;
+  height: 100%;
 }
 
-/* Enhanced Confirmation Modal Styles */
-.confirmation-modal {
-  backdrop-filter: blur(4px);
-  transition: all 0.3s ease;
+.left-panel .section-tabs-header {
+  border-radius: 0;
+  background-color: #1a1a1a;
 }
 
-.confirmation-modal .modal-content {
-  background-color: #1e1e1e !important;
-  border: 1px solid #444 !important;
-  color: #e0e0e0 !important;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+.left-panel .section-tabs-list {
+  height: calc(100% - 70px);
+  overflow-y: auto;
 }
 
-.confirmation-modal .modal-header {
-  border-bottom: none !important;
+/* Make sure the content area scrolls independently */
+.detailed-results {
+  max-width: 100%;
 }
 
-.confirmation-modal .modal-footer {
-  border-top: none !important;
-}
-
-/* Variant background colors for dark theme */
-.confirmation-modal .bg-danger-subtle {
-  background-color: rgba(220, 53, 69, 0.1) !important;
-  border-color: rgba(220, 53, 69, 0.3) !important;
-}
-
-.confirmation-modal .bg-warning-subtle {
-  background-color: rgba(255, 193, 7, 0.1) !important;
-  border-color: rgba(255, 193, 7, 0.3) !important;
-}
-
-.confirmation-modal .bg-info-subtle {
-  background-color: rgba(13, 202, 240, 0.1) !important;
-  border-color: rgba(13, 202, 240, 0.3) !important;
-}
-
-.confirmation-modal .bg-success-subtle {
-  background-color: rgba(25, 135, 84, 0.1) !important;
-  border-color: rgba(25, 135, 84, 0.3) !important;
-}
-
-.confirmation-modal .border-danger-subtle {
-  border-color: rgba(220, 53, 69, 0.3) !important;
-}
-
-.confirmation-modal .border-warning-subtle {
-  border-color: rgba(255, 193, 7, 0.3) !important;
-}
-
-.confirmation-modal .border-info-subtle {
-  border-color: rgba(13, 202, 240, 0.3) !important;
-}
-
-.confirmation-modal .border-success-subtle {
-  border-color: rgba(25, 135, 84, 0.3) !important;
-}
-
-/* Button hover effects */
-.confirmation-modal .btn:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
-}
-
-.confirmation-modal .btn:active {
-  transform: translateY(0);
-}
-
-/* Close button styling */
-.confirmation-modal .btn-close {
-  background: none !important;
-  border: none !important;
-  opacity: 0.6 !important;
-  transition: opacity 0.2s ease !important;
-}
-
-.confirmation-modal .btn-close:hover {
-  opacity: 1 !important;
-}
-
-/* Animation keyframes */
-@keyframes modalSlideIn {
-  from {
-    opacity: 0;
-    transform: scale(0.8) translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-  }
-}
-
-@keyframes modalFadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-/* Responsive adjustments */
-@media (max-width: 576px) {
-  .confirmation-modal .modal-dialog {
-    margin: 1rem;
-  }
-
-  .confirmation-modal .modal-content {
-    border-radius: 8px !important;
-  }
-
-  .confirmation-modal .modal-header {
-    padding: 1rem !important;
-  }
-
-  .confirmation-modal .modal-body {
-    padding: 1.5rem 1rem !important;
-  }
-
-  .confirmation-modal .modal-footer {
-    padding: 1rem !important;
-    flex-direction: column;
-    gap: 8px !important;
-  }
-
-  .confirmation-modal .btn {
-    width: 100%;
+@media (min-width: 992px) {
+  .detailed-results .card {
+    max-width: 1200px;
+    margin: 0 auto 1.5rem;
   }
 }

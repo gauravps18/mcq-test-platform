@@ -1,12 +1,14 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useTest } from '../context/TestContext';
 import DetailedResults from '../components/DetailedResults';
+import SectionTabs from '../components/SectionTabs';
 
 const DetailedResultPage: React.FC = () => {
   const { testId } = useParams<{ testId: string }>();
   const navigate = useNavigate();
   const { currentTest, loading, error, loadTest, calculateDetailedResults } = useTest();
+  const [selectedSectionIndex, setSelectedSectionIndex] = useState(0);
 
   useEffect(() => {
     if (testId && (!currentTest || currentTest.id !== testId)) {
@@ -78,15 +80,26 @@ const DetailedResultPage: React.FC = () => {
     );
   }
 
+  // Get sections from the detailed result
+  const sections = detailedResult.detailedSectionResults.map((section, index) => ({
+    id: section.sectionId,
+    title: `Section ${index + 1}`,
+    questions: section.questionResults.map((qr) => qr.question),
+  }));
+
+  const handleSectionChange = (index: number) => {
+    setSelectedSectionIndex(index);
+  };
+
   return (
-    <div className="container py-4">
+    <div className="detailed-result-page vh-100 d-flex flex-column overflow-hidden">
       {/* Header */}
-      <div className="row mb-4">
-        <div className="col">
+      <div className="bg-dark border-bottom border-secondary py-3">
+        <div className="container-fluid px-4">
           <div className="d-flex justify-content-between align-items-center">
             <div>
-              <h1 className="h2 mb-1 text-light">{currentTest.title}</h1>
-              <p className="text-muted mb-0">Detailed Question Analysis</p>
+              <h1 className="h3 mb-1 text-light">{currentTest.title}</h1>
+              <p className="text-light mb-0">Detailed Question Analysis</p>
             </div>
             <div className="d-flex gap-2">
               <button
@@ -105,8 +118,30 @@ const DetailedResultPage: React.FC = () => {
         </div>
       </div>
 
-      {/* Detailed Results */}
-      <DetailedResults detailedResult={detailedResult} />
+      {/* Main Content with Left Panel */}
+      <div className="flex-grow-1 d-flex overflow-hidden">
+        {/* Left Panel - Section Tabs */}
+        <div
+          className="left-panel bg-dark border-end border-secondary"
+          style={{ width: '280px', overflow: 'auto' }}
+        >
+          <SectionTabs
+            sections={sections}
+            currentSectionIndex={selectedSectionIndex}
+            onSectionChange={handleSectionChange}
+          />
+        </div>
+
+        {/* Main Content - Detailed Results */}
+        <div className="flex-grow-1 p-4">
+          <DetailedResults
+            detailedResult={{
+              ...detailedResult,
+              detailedSectionResults: [detailedResult.detailedSectionResults[selectedSectionIndex]],
+            }}
+          />
+        </div>
+      </div>
     </div>
   );
 };
