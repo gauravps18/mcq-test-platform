@@ -25,7 +25,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "PORT=9000 react-scripts start",
     "build": "node scripts/copy-data.js && react-scripts build",
     "build:dev": "node scripts/copy-data.js && REACT_APP_ENV=development react-scripts build",
     "build:prod": "node scripts/copy-data.js && REACT_APP_ENV=production react-scripts build && node scripts/build-static-api.js",
