@@ -1469,7 +1469,9 @@ small,
 
 /* Question Container */
 .test-content {
-  min-height: 360px;
+  min-height: calc(100vh - 140px);
+  display: flex;
+  flex-direction: column;
 }
 
 .question-container {
@@ -1478,6 +1480,7 @@ small,
   border-radius: 0.675rem;
   overflow: hidden;
   margin-bottom: 1.35rem;
+  flex: 1;
 }
 
 .question-header {
@@ -1818,6 +1821,12 @@ small,
   background: rgba(255, 255, 255, 0.02);
   border-radius: 0.675rem;
   border: 1px solid #333;
+  margin-top: auto;
+  position: sticky;
+  bottom: 0;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+  background: rgba(30, 30, 30, 0.95);
 }
 
 .btn-nav {
