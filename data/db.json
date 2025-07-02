@@ -86,7 +86,7 @@
       "description": "English, Quantitative Aptitude, Reasoning, Computer Fundamentals & Concepts of Programming",
       "file": "tests/test5/c-cat-section-A.json",
       "category": "entrance-exam",
-      "difficulty": "intermediate",
+      "difficulty": "hard",
       "estimatedDuration": 60,
       "isActive": true
     },
@@ -96,7 +96,7 @@
       "description": "C Programming, Data Structures, OOP using C++, Operating Systems & Networking, Big Data & AI",
       "file": "tests/test5/c-cat-section-B.json",
       "category": "entrance-exam",
-      "difficulty": "intermediate",
+      "difficulty": "hard",
       "estimatedDuration": 60,
       "isActive": true
     }
