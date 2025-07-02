@@ -103,10 +103,6 @@ body {
   border: 1px solid #6c757d !important;
 }
 
-.form-check-label {
-  color: #e0e0e0 !important;
-}
-
 .spinner-border {
   color: #0d6efd !important;
 }
@@ -180,18 +176,6 @@ code {
   color: #fff !important;
 }
 
-.btn-outline-secondary {
-  color: #6c757d !important;
-  border-color: #6c757d !important;
-  background-color: transparent !important;
-}
-
-.btn-outline-secondary:hover {
-  background-color: #6c757d !important;
-  border-color: #6c757d !important;
-  color: #fff !important;
-}
-
 /* Results page */
 .result-summary {
   max-width: 900px;
@@ -225,18 +209,6 @@ code {
   color: #000 !important;
 }
 
-/* Timer styles */
-.timer {
-  font-family: monospace;
-  font-size: 1.2rem;
-  padding: 0.5rem 1rem;
-  background-color: #1e1e1e !important;
-  border: 1px solid #333 !important;
-  border-radius: 0.25rem;
-  font-weight: bold;
-  color: #e0e0e0 !important;
-}
-
 /* Progress bar dark theme */
 .progress {
   background-color: #2d2d2d !important;
@@ -262,10 +234,6 @@ code {
 }
 
 /* Additional dark theme utilities */
-.text-dark {
-  color: #e0e0e0 !important;
-}
-
 .bg-light {
   background-color: #2d2d2d !important;
   color: #e0e0e0 !important;
@@ -295,8 +263,7 @@ code {
 }
 
 /* Additional Bootstrap component overrides */
-.container,
-.container-fluid {
+.container {
   color: #e0e0e0 !important;
 }
 
@@ -324,14 +291,6 @@ code {
   color: #0dcaf0 !important;
 }
 
-.text-white {
-  color: #fff !important;
-}
-
-.display-1,
-.display-2,
-.display-3,
-.display-4,
 .display-5,
 .display-6 {
   color: #e0e0e0 !important;
@@ -344,81 +303,6 @@ h4,
 h5,
 h6 {
   color: #e0e0e0 !important;
-}
-
-.btn-outline-success {
-  color: #198754 !important;
-  border-color: #198754 !important;
-  background-color: transparent !important;
-}
-
-.btn-outline-success:hover {
-  background-color: #198754 !important;
-  border-color: #198754 !important;
-  color: #fff !important;
-}
-
-.btn-outline-danger {
-  color: #dc3545 !important;
-  border-color: #dc3545 !important;
-  background-color: transparent !important;
-}
-
-.btn-outline-danger:hover {
-  background-color: #dc3545 !important;
-  border-color: #dc3545 !important;
-  color: #fff !important;
-}
-
-/* Input and form styling */
-.form-control {
-  background-color: #2d2d2d !important;
-  border: 1px solid #6c757d !important;
-  color: #e0e0e0 !important;
-}
-
-.form-control:focus {
-  background-color: #2d2d2d !important;
-  border-color: #0d6efd !important;
-  color: #e0e0e0 !important;
-  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25) !important;
-}
-
-.form-select {
-  background-color: #2d2d2d !important;
-  border: 1px solid #6c757d !important;
-  color: #e0e0e0 !important;
-}
-
-.form-select:focus {
-  background-color: #2d2d2d !important;
-  border-color: #0d6efd !important;
-  color: #e0e0e0 !important;
-}
-
-/* Dropdown styling */
-.dropdown-menu {
-  background-color: #1e1e1e !important;
-  border: 1px solid #333 !important;
-}
-
-.dropdown-item {
-  color: #e0e0e0 !important;
-}
-
-.dropdown-item:hover {
-  background-color: #2d2d2d !important;
-  color: #e0e0e0 !important;
-}
-
-/* Shadow override for dark theme */
-.shadow {
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5) !important;
-}
-
-/* Override any lingering light backgrounds */
-.bg-white {
-  background-color: #1e1e1e !important;
 }
 
 /* Link styling for dark theme */
@@ -470,15 +354,6 @@ a[class*='list-group-item']:hover {
 /* Make sure button text is white */
 .list-group-item .btn * {
   color: #fff !important;
-}
-
-/* Bootstrap link components */
-.btn-link {
-  color: #0dcaf0 !important;
-}
-
-.btn-link:hover {
-  color: #31d2f2 !important;
 }
 
 /* Card title specific styling */
@@ -553,10 +428,6 @@ small,
 }
 
 /* Make sure all heading elements are properly styled */
-.display-1,
-.display-2,
-.display-3,
-.display-4,
 .display-5,
 .display-6 {
   color: #e0e0e0 !important;
