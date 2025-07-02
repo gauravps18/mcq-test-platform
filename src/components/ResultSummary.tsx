@@ -1,85 +1,129 @@
-import React, { useState } from 'react';
-import { TestResult, DetailedTestResult } from '../types';
-import DetailedResults from './DetailedResults';
+import React from 'react';
+import { TestResult } from '../types';
 
 interface ResultSummaryProps {
   result: TestResult;
-  detailedResult?: DetailedTestResult;
+  testId?: string;
 }
 
-const ResultSummary: React.FC<ResultSummaryProps> = ({ result, detailedResult }) => {
-  const [showDetailed, setShowDetailed] = useState(false);
+const ResultSummary: React.FC<ResultSummaryProps> = ({ result }) => {
+  // Calculate performance grade
+  const getPerformanceGrade = (percentage: number) => {
+    if (percentage >= 90) return { grade: 'A+', color: 'success', icon: 'bi-trophy-fill' };
+    if (percentage >= 80) return { grade: 'A', color: 'success', icon: 'bi-star-fill' };
+    if (percentage >= 70) return { grade: 'B+', color: 'info', icon: 'bi-star-half' };
+    if (percentage >= 60) return { grade: 'B', color: 'warning', icon: 'bi-star' };
+    if (percentage >= 50) return { grade: 'C', color: 'warning', icon: 'bi-dash-circle' };
+    return { grade: 'F', color: 'danger', icon: 'bi-x-circle-fill' };
+  };
+
+  const performance = getPerformanceGrade(result.percentage);
 
   return (
-    <div className="result-summary">
-      <div className="card mb-4">
-        <div className="card-header">
-          <div className="d-flex justify-content-between align-items-center">
-            <h3 className="card-title mb-0">Test Result</h3>
-            {detailedResult && (
-              <button
-                className="btn btn-outline-primary"
-                onClick={() => setShowDetailed(!showDetailed)}
+    <div className="row justify-content-center">
+      <div className="col-lg-8">
+        {/* Main Result Card */}
+        <div className="card shadow-lg border-0 mb-4">
+          <div className="card-body text-center p-5">
+            {/* Score Circle */}
+            <div className="mb-4">
+              <div
+                className={`mx-auto rounded-circle d-flex align-items-center justify-content-center text-white`}
+                style={{
+                  width: '120px',
+                  height: '120px',
+                  backgroundColor: result.passed ? '#28a745' : '#dc3545',
+                  fontSize: '2rem',
+                  fontWeight: 'bold',
+                }}
               >
-                {showDetailed ? 'Hide' : 'Show'} Question Analysis
-              </button>
-            )}
+                {result.percentage.toFixed(0)}%
+              </div>
+            </div>
+
+            {/* Status */}
+            <h2 className={`mb-3 ${result.passed ? 'text-success' : 'text-danger'}`}>
+              <i className={`${performance.icon} me-2`}></i>
+              {result.passed ? 'Congratulations!' : 'Keep Trying!'}
+            </h2>
+
+            <p className="lead text-muted mb-4">
+              You scored <strong className="text-light">{result.obtainedMarks}</strong> out of{' '}
+              <strong className="text-light">{result.totalMarks}</strong> marks
+            </p>
+
+            {/* Grade Badge */}
+            <div className="mb-4">
+              <span className={`badge bg-${performance.color} fs-4 px-4 py-2`}>
+                Grade: {performance.grade}
+              </span>
+            </div>
           </div>
         </div>
-        <div className="card-body">
-          <div className="row text-center mb-4">
-            <div className="col">
-              <h4 className="mb-2">Total Marks</h4>
-              <p className="display-6">{result.totalMarks}</p>
-            </div>
-            <div className="col">
-              <h4 className="mb-2">Obtained Marks</h4>
-              <p className="display-6">{result.obtainedMarks}</p>
-            </div>
-            <div className="col">
-              <h4 className="mb-2">Percentage</h4>
-              <p className="display-6">{result.percentage.toFixed(2)}%</p>
-            </div>
-            <div className="col">
-              <h4 className="mb-2">Status</h4>
-              <p className={`display-6 ${result.passed ? 'text-success' : 'text-danger'}`}>
-                {result.passed ? 'PASS' : 'FAIL'}
-              </p>
-            </div>
-          </div>
 
-          <h4 className="mb-3">Section Wise Performance</h4>
-          <div className="table-responsive">
-            <table className="table table-bordered table-dark">
-              <thead>
-                <tr>
-                  <th>Section</th>
-                  <th>Total Questions</th>
-                  <th>Correct</th>
-                  <th>Incorrect</th>
-                  <th>Unanswered</th>
-                  <th>Score</th>
-                </tr>
-              </thead>
-              <tbody>
-                {result.sectionResults.map((sectionResult, index) => (
-                  <tr key={sectionResult.sectionId}>
-                    <td>Section {index + 1}</td>
-                    <td>{sectionResult.totalQuestions}</td>
-                    <td className="text-success">{sectionResult.correctAnswers}</td>
-                    <td className="text-danger">{sectionResult.incorrectAnswers}</td>
-                    <td>{sectionResult.unanswered}</td>
-                    <td>{sectionResult.score}</td>
+        {/* Section Performance */}
+        <div className="card shadow border-0">
+          <div className="card-header bg-dark">
+            <h4 className="card-title mb-0 text-light">
+              <i className="bi bi-bar-chart-line me-2"></i>
+              Section Performance
+            </h4>
+          </div>
+          <div className="card-body">
+            <div className="table-responsive">
+              <table className="table table-hover table-dark mb-0">
+                <thead className="table-dark">
+                  <tr>
+                    <th>Section</th>
+                    <th className="text-center">Questions</th>
+                    <th className="text-center">
+                      <span className="text-success">
+                        <i className="bi bi-check-circle-fill me-1"></i>
+                        Correct
+                      </span>
+                    </th>
+                    <th className="text-center">
+                      <span className="text-danger">
+                        <i className="bi bi-x-circle-fill me-1"></i>
+                        Incorrect
+                      </span>
+                    </th>
+                    <th className="text-center">
+                      <span className="text-warning">
+                        <i className="bi bi-dash-circle-fill me-1"></i>
+                        Unanswered
+                      </span>
+                    </th>
+                    <th className="text-center">Score</th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                  {result.sectionResults.map((sectionResult, index) => (
+                    <tr key={sectionResult.sectionId}>
+                      <td>
+                        <strong className="text-light">Section {index + 1}</strong>
+                      </td>
+                      <td className="text-center">{sectionResult.totalQuestions}</td>
+                      <td className="text-center">
+                        <span className="badge bg-success">{sectionResult.correctAnswers}</span>
+                      </td>
+                      <td className="text-center">
+                        <span className="badge bg-danger">{sectionResult.incorrectAnswers}</span>
+                      </td>
+                      <td className="text-center">
+                        <span className="badge bg-warning">{sectionResult.unanswered}</span>
+                      </td>
+                      <td className="text-center">
+                        <strong className="text-light">{sectionResult.score}</strong>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>
-
-      {/* Show detailed results if requested */}
-      {showDetailed && detailedResult && <DetailedResults detailedResult={detailedResult} />}
     </div>
   );
 };

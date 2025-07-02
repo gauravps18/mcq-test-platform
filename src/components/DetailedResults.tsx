@@ -57,33 +57,53 @@ const QuestionResultCard: React.FC<{ questionResult: QuestionResult; questionNum
   };
 
   return (
-    <div className="card mb-3">
-      <div className="card-header d-flex justify-content-between align-items-center">
-        <h5 className="mb-0">Question {questionNumber}</h5>
+    <div className="card mb-4 shadow-sm border-0">
+      <div className="card-header d-flex justify-content-between align-items-center bg-dark">
+        <h5 className="mb-0 text-light">
+          <i className="bi bi-question-circle me-2"></i>
+          Question {questionNumber}
+        </h5>
         <div className="d-flex align-items-center gap-3">
-          <span className={`badge bg-${getStatusColor()}`}>{getStatusText()}</span>
-          <span className={`fw-bold ${marksAwarded >= 0 ? 'text-success' : 'text-danger'}`}>
+          <span className={`badge bg-${getStatusColor()} px-3 py-2`}>
+            <i
+              className={`bi ${
+                !wasAnswered ? 'bi-dash-circle' : isCorrect ? 'bi-check-circle' : 'bi-x-circle'
+              } me-1`}
+            ></i>
+            {getStatusText()}
+          </span>
+          <span className={`fw-bold fs-5 ${marksAwarded >= 0 ? 'text-success' : 'text-danger'}`}>
             {marksAwarded >= 0 ? '+' : ''}
             {marksAwarded} marks
           </span>
         </div>
       </div>
       <div className="card-body">
-        <div className="mb-3">
-          <strong>Question:</strong>
-          <div className="mt-2">{formatTextWithBackticks(question.text)}</div>
+        <div className="mb-4">
+          <h6 className="text-primary mb-2">
+            <i className="bi bi-chat-square-text me-2"></i>
+            Question:
+          </h6>
+          <div className="p-3 bg-dark rounded border text-light">
+            {formatTextWithBackticks(question.text)}
+          </div>
         </div>
 
         {question.codeSnippet && (
-          <div className="mb-3">
-            <strong>Code:</strong>
-            <div className="mt-2">
+          <div className="mb-4">
+            <h6 className="text-primary mb-2">
+              <i className="bi bi-code-slash me-2"></i>
+              Code:
+            </h6>
+            <div className="code-snippet">
               <pre
-                className="p-3 border rounded"
+                className="p-3 rounded border"
                 style={{
                   backgroundColor: '#0d1117',
                   color: '#f0f6fc',
                   border: '1px solid #30363d',
+                  fontSize: '0.9rem',
+                  lineHeight: '1.4',
                 }}
               >
                 <code>{question.codeSnippet}</code>
@@ -93,32 +113,45 @@ const QuestionResultCard: React.FC<{ questionResult: QuestionResult; questionNum
         )}
 
         <div className="row">
-          <div className="col-md-6">
-            <strong>Your Answer:</strong>
+          <div className="col-md-6 mb-3">
+            <h6 className="text-primary mb-2">
+              <i className="bi bi-person-fill me-2"></i>
+              Your Answer:
+            </h6>
             <div
-              className={`mt-2 p-2 rounded ${
+              className={`p-3 rounded border ${
                 !wasAnswered
-                  ? 'bg-warning bg-opacity-25'
+                  ? 'bg-warning bg-opacity-25 border-warning'
                   : isCorrect
-                  ? 'bg-success bg-opacity-25'
-                  : 'bg-danger bg-opacity-25'
+                  ? 'bg-success bg-opacity-25 border-success'
+                  : 'bg-danger bg-opacity-25 border-danger'
               }`}
             >
               {wasAnswered ? (
-                <div>
-                  <strong>{getUserSelectedOption()?.id.toUpperCase()}.</strong>{' '}
+                <div className="text-light">
+                  <span className="badge bg-secondary me-2">
+                    {getUserSelectedOption()?.id.toUpperCase()}
+                  </span>
                   {formatTextWithBackticks(getUserSelectedOption()?.text || '')}
                 </div>
               ) : (
-                <em className="text-muted">No answer selected</em>
+                <div className="text-muted fst-italic">
+                  <i className="bi bi-dash-circle me-2"></i>
+                  No answer selected
+                </div>
               )}
             </div>
           </div>
-          <div className="col-md-6">
-            <strong>Correct Answer:</strong>
-            <div className="mt-2 p-2 rounded bg-success bg-opacity-25">
-              <div>
-                <strong>{getCorrectOption()?.id.toUpperCase()}.</strong>{' '}
+          <div className="col-md-6 mb-3">
+            <h6 className="text-success mb-2">
+              <i className="bi bi-check-circle-fill me-2"></i>
+              Correct Answer:
+            </h6>
+            <div className="p-3 rounded border bg-success bg-opacity-25 border-success">
+              <div className="text-light">
+                <span className="badge bg-success me-2">
+                  {getCorrectOption()?.id.toUpperCase()}
+                </span>
                 {formatTextWithBackticks(getCorrectOption()?.text || '')}
               </div>
             </div>
@@ -127,9 +160,15 @@ const QuestionResultCard: React.FC<{ questionResult: QuestionResult; questionNum
 
         {!isCorrect && wasAnswered && (
           <div className="mt-3">
-            <div className="alert alert-info">
-              <strong>Explanation:</strong> The correct answer is{' '}
-              <strong>{getCorrectOption()?.id.toUpperCase()}</strong>.{getCorrectOption()?.text}
+            <div className="alert alert-info border-0 bg-info bg-opacity-25">
+              <h6 className="alert-heading text-info">
+                <i className="bi bi-lightbulb me-2"></i>
+                Explanation:
+              </h6>
+              <p className="mb-0 text-light">
+                The correct answer is <strong>{getCorrectOption()?.id.toUpperCase()}</strong>:{' '}
+                {getCorrectOption()?.text}
+              </p>
             </div>
           </div>
         )}
@@ -142,61 +181,113 @@ const DetailedResults: React.FC<DetailedResultsProps> = ({ detailedResult }) => 
   const [selectedSectionIndex, setSelectedSectionIndex] = useState(0);
 
   if (!detailedResult.detailedSectionResults.length) {
-    return <div className="alert alert-warning">No detailed results available.</div>;
+    return (
+      <div className="row justify-content-center">
+        <div className="col-md-6">
+          <div className="alert alert-warning text-center bg-warning bg-opacity-25 border-warning">
+            <i className="bi bi-exclamation-triangle fs-1 mb-3 text-warning"></i>
+            <h4 className="text-light">No Analysis Available</h4>
+            <p className="mb-0 text-light">
+              Detailed question analysis is not available for this test.
+            </p>
+          </div>
+        </div>
+      </div>
+    );
   }
 
   const currentSection = detailedResult.detailedSectionResults[selectedSectionIndex];
 
   return (
     <div className="detailed-results">
-      <div className="card mb-4">
-        <div className="card-header">
-          <h3 className="card-title mb-3">Question-wise Analysis</h3>
-
-          {/* Section Tabs */}
-          <ul className="nav nav-tabs card-header-tabs">
-            {detailedResult.detailedSectionResults.map((section, index) => (
-              <li className="nav-item" key={section.sectionId}>
+      {/* Section Navigation */}
+      {detailedResult.detailedSectionResults.length > 1 && (
+        <div className="card mb-4 shadow-sm border-0">
+          <div className="card-body">
+            <h5 className="card-title mb-3 text-light">
+              <i className="bi bi-layers me-2"></i>
+              Select Section
+            </h5>
+            <div className="d-flex flex-wrap gap-2">
+              {detailedResult.detailedSectionResults.map((section, index) => (
                 <button
-                  className={`nav-link ${selectedSectionIndex === index ? 'active' : ''}`}
+                  key={section.sectionId}
+                  className={`btn ${
+                    selectedSectionIndex === index ? 'btn-primary' : 'btn-outline-primary'
+                  }`}
                   onClick={() => setSelectedSectionIndex(index)}
                 >
-                  Section {index + 1}
-                  <small className="d-block">
-                    {section.correctAnswers}/{section.totalQuestions} correct
-                  </small>
+                  <div className="d-flex flex-column align-items-center">
+                    <span>Section {index + 1}</span>
+                    <small>
+                      {section.correctAnswers}/{section.totalQuestions}
+                    </small>
+                  </div>
                 </button>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div className="card-body">
-          {/* Section Summary */}
-          <div className="row text-center mb-4">
-            <div className="col">
-              <h5>Total Questions</h5>
-              <span className="badge bg-primary fs-6">{currentSection.totalQuestions}</span>
-            </div>
-            <div className="col">
-              <h5>Correct</h5>
-              <span className="badge bg-success fs-6">{currentSection.correctAnswers}</span>
-            </div>
-            <div className="col">
-              <h5>Incorrect</h5>
-              <span className="badge bg-danger fs-6">{currentSection.incorrectAnswers}</span>
-            </div>
-            <div className="col">
-              <h5>Unanswered</h5>
-              <span className="badge bg-warning fs-6">{currentSection.unanswered}</span>
-            </div>
-            <div className="col">
-              <h5>Score</h5>
-              <span className="badge bg-info fs-6">{currentSection.score} marks</span>
+              ))}
             </div>
           </div>
+        </div>
+      )}
 
-          {/* Question Results */}
+      {/* Section Summary */}
+      <div className="card mb-4 shadow-sm border-0">
+        <div className="card-header bg-dark">
+          <h4 className="card-title mb-0 text-light">
+            <i className="bi bi-graph-up me-2"></i>
+            Section {selectedSectionIndex + 1} Summary
+          </h4>
+        </div>
+        <div className="card-body">
+          <div className="row text-center">
+            <div className="col-6 col-md">
+              <div className="border border-secondary rounded p-3 bg-dark">
+                <i className="bi bi-list-ul text-primary fs-3"></i>
+                <h5 className="mt-2 mb-1 text-light">Total</h5>
+                <span className="badge bg-primary fs-6">{currentSection.totalQuestions}</span>
+              </div>
+            </div>
+            <div className="col-6 col-md">
+              <div className="border border-secondary rounded p-3 bg-dark">
+                <i className="bi bi-check-circle text-success fs-3"></i>
+                <h5 className="mt-2 mb-1 text-light">Correct</h5>
+                <span className="badge bg-success fs-6">{currentSection.correctAnswers}</span>
+              </div>
+            </div>
+            <div className="col-6 col-md">
+              <div className="border border-secondary rounded p-3 bg-dark">
+                <i className="bi bi-x-circle text-danger fs-3"></i>
+                <h5 className="mt-2 mb-1 text-light">Incorrect</h5>
+                <span className="badge bg-danger fs-6">{currentSection.incorrectAnswers}</span>
+              </div>
+            </div>
+            <div className="col-6 col-md">
+              <div className="border border-secondary rounded p-3 bg-dark">
+                <i className="bi bi-dash-circle text-warning fs-3"></i>
+                <h5 className="mt-2 mb-1 text-light">Skipped</h5>
+                <span className="badge bg-warning fs-6">{currentSection.unanswered}</span>
+              </div>
+            </div>
+            <div className="col-12 col-md">
+              <div className="border border-secondary rounded p-3 bg-dark">
+                <i className="bi bi-trophy text-info fs-3"></i>
+                <h5 className="mt-2 mb-1 text-light">Score</h5>
+                <span className="badge bg-info fs-6">{currentSection.score} marks</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Question Results */}
+      <div className="card shadow-sm border-0">
+        <div className="card-header bg-dark">
+          <h4 className="card-title mb-0 text-light">
+            <i className="bi bi-question-circle me-2"></i>
+            Question Analysis
+          </h4>
+        </div>
+        <div className="card-body">
           <div className="questions-results">
             {currentSection.questionResults.map((questionResult, index) => (
               <QuestionResultCard

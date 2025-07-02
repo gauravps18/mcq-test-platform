@@ -7,6 +7,7 @@ import './App.css';
 import HomePage from './pages/HomePage';
 import TestPage from './pages/TestPage';
 import ResultPage from './pages/ResultPage';
+import DetailedResultPage from './pages/DetailedResultPage';
 
 // Import Bootstrap CSS
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -21,6 +22,7 @@ function App() {
               <Route path="/" element={<HomePage />} />
               <Route path="/test/:testId" element={<TestPage />} />
               <Route path="/result/:testId" element={<ResultPage />} />
+              <Route path="/result/:testId/details" element={<DetailedResultPage />} />
             </Routes>
           </div>
         </div>

@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useTest } from '../context/TestContext';
-import ResultSummary from '../components/ResultSummary';
+import DetailedResults from '../components/DetailedResults';
 
-const ResultPage: React.FC = () => {
+const DetailedResultPage: React.FC = () => {
   const { testId } = useParams<{ testId: string }>();
   const navigate = useNavigate();
-  const { currentTest, loading, error, loadTest, calculateResults } = useTest();
+  const { currentTest, loading, error, loadTest, calculateDetailedResults } = useTest();
 
   useEffect(() => {
     if (testId && (!currentTest || currentTest.id !== testId)) {
@@ -25,7 +25,7 @@ const ResultPage: React.FC = () => {
           >
             <span className="visually-hidden">Loading...</span>
           </div>
-          <p className="mt-3 text-muted">Calculating your results...</p>
+          <p className="mt-3 text-muted">Loading detailed results...</p>
         </div>
       </div>
     );
@@ -52,9 +52,9 @@ const ResultPage: React.FC = () => {
     );
   }
 
-  const result = calculateResults();
+  const detailedResult = calculateDetailedResults();
 
-  if (!result) {
+  if (!detailedResult) {
     return (
       <div className="container py-5">
         <div className="row justify-content-center">
@@ -63,10 +63,13 @@ const ResultPage: React.FC = () => {
               className="alert alert-warning text-center bg-warning bg-opacity-25 border-warning"
               role="alert"
             >
-              <h4 className="alert-heading text-light">Results Unavailable</h4>
-              <p className="text-light">Failed to calculate test results</p>
-              <button className="btn btn-outline-light" onClick={() => navigate('/')}>
-                Go to Home
+              <h4 className="alert-heading text-light">No Results Available</h4>
+              <p className="text-light">Detailed results could not be calculated</p>
+              <button
+                className="btn btn-outline-light"
+                onClick={() => navigate(`/result/${testId}`)}
+              >
+                Back to Summary
               </button>
             </div>
           </div>
@@ -75,47 +78,37 @@ const ResultPage: React.FC = () => {
     );
   }
 
-  const handleRetakeTest = () => {
-    navigate(`/test/${testId}`);
-  };
-
-  const handleGoHome = () => {
-    navigate('/');
-  };
-
-  const handleViewDetails = () => {
-    navigate(`/result/${testId}/details`);
-  };
-
   return (
-    <div className="container py-5">
-      <div className="text-center mb-5">
-        <h1 className="display-4 fw-bold mb-2 text-light">Test Completed!</h1>
-        <p className="lead text-muted">{currentTest.title}</p>
-      </div>
-
-      <ResultSummary result={result} />
-
-      <div className="row justify-content-center mt-5">
-        <div className="col-md-8">
-          <div className="d-flex flex-column flex-md-row justify-content-center gap-3">
-            <button className="btn btn-outline-primary btn-lg" onClick={handleViewDetails}>
-              <i className="bi bi-list-ul me-2"></i>
-              View Question Analysis
-            </button>
-            <button className="btn btn-primary btn-lg" onClick={handleRetakeTest}>
-              <i className="bi bi-arrow-clockwise me-2"></i>
-              Retake Test
-            </button>
-            <button className="btn btn-outline-secondary btn-lg" onClick={handleGoHome}>
-              <i className="bi bi-house me-2"></i>
-              Go to Home
-            </button>
+    <div className="container py-4">
+      {/* Header */}
+      <div className="row mb-4">
+        <div className="col">
+          <div className="d-flex justify-content-between align-items-center">
+            <div>
+              <h1 className="h2 mb-1 text-light">{currentTest.title}</h1>
+              <p className="text-muted mb-0">Detailed Question Analysis</p>
+            </div>
+            <div className="d-flex gap-2">
+              <button
+                className="btn btn-outline-secondary"
+                onClick={() => navigate(`/result/${testId}`)}
+              >
+                <i className="bi bi-arrow-left me-2"></i>
+                Back to Summary
+              </button>
+              <button className="btn btn-primary" onClick={() => navigate('/')}>
+                <i className="bi bi-house me-2"></i>
+                Home
+              </button>
+            </div>
           </div>
         </div>
       </div>
+
+      {/* Detailed Results */}
+      <DetailedResults detailedResult={detailedResult} />
     </div>
   );
 };
 
-export default ResultPage;
+export default DetailedResultPage;
