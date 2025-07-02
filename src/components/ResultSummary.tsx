@@ -24,16 +24,16 @@ const ResultSummary: React.FC<ResultSummaryProps> = ({ result }) => {
       <div className="col-lg-8">
         {/* Main Result Card */}
         <div className="card shadow-lg border-0 mb-4">
-          <div className="card-body text-center p-5">
+          <div className="card-body text-center p-3">
             {/* Score Circle */}
-            <div className="mb-4">
+            <div className="mb-3">
               <div
                 className={`mx-auto rounded-circle d-flex align-items-center justify-content-center text-white`}
                 style={{
-                  width: '120px',
-                  height: '120px',
+                  width: '100px',
+                  height: '100px',
                   backgroundColor: result.passed ? '#28a745' : '#dc3545',
-                  fontSize: '2rem',
+                  fontSize: '1.5rem',
                   fontWeight: 'bold',
                 }}
               >
@@ -53,7 +53,7 @@ const ResultSummary: React.FC<ResultSummaryProps> = ({ result }) => {
             </p>
 
             {/* Grade Badge */}
-            <div className="mb-4">
+            <div className="mb-1">
               <span className={`badge bg-${performance.color} fs-4 px-4 py-2`}>
                 Grade: {performance.grade}
               </span>

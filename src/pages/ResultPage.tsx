@@ -88,15 +88,15 @@ const ResultPage: React.FC = () => {
   };
 
   return (
-    <div className="container py-5">
-      <div className="text-center mb-5">
-        <h1 className="display-4 fw-bold mb-2 text-light">Test Completed!</h1>
-        <p className="lead text-muted">{currentTest.title}</p>
+    <div className="container py-3">
+      <div className="text-center mb-3">
+        <h3 className="display-4 fw-bold mb-2 text-light">Test Completed!</h3>
+        <p className="lead text-light">{currentTest.title}</p>
       </div>
 
       <ResultSummary result={result} />
 
-      <div className="row justify-content-center mt-5">
+      <div className="row justify-content-center mt-4">
         <div className="col-md-8">
           <div className="d-flex flex-column flex-md-row justify-content-center gap-3">
             <button className="btn btn-outline-primary btn-lg" onClick={handleViewDetails}>
